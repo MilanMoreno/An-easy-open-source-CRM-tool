@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, AbstractControl, ValidationErrors } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animations';
@@ -41,6 +41,7 @@ import { CommonModule } from '@angular/common';
               <input
                 type="text"
                 id="name"
+                name="name"
                 formControlName="name"
                 [placeholder]="'CONTACT.NAME_PLACEHOLDER' | translate"
                 [class.is-invalid]="submitted && f['name'].errors">
@@ -56,13 +57,14 @@ import { CommonModule } from '@angular/common';
               <input
                 type="email"
                 id="email"
+                name="email"
                 formControlName="email"
                 [placeholder]="'CONTACT.EMAIL_PLACEHOLDER' | translate"
-                [class.is-invalid]="submitted && f['email'].errors">
+                [class.is-invalid]="shouldShowEmailError()">
               
               <div class="contact__error-container">
-                <span class="contact__error" *ngIf="submitted && f['email'].errors">
-                  {{ 'CONTACT.EMAIL_ERROR' | translate }}
+                <span class="contact__error" *ngIf="shouldShowEmailError()">
+                  {{ getEmailErrorMessage() | translate }}
                 </span>
               </div>
             </div>
@@ -70,14 +72,15 @@ import { CommonModule } from '@angular/common';
             <div class="contact__form-group">
               <textarea
                 id="message"
+                name="message"
                 formControlName="message"
                 rows="4"
                 [placeholder]="'CONTACT.MESSAGE_PLACEHOLDER' | translate"
-                [class.is-invalid]="submitted && f['message'].errors">
+                [class.is-invalid]="shouldShowMessageError()">
               </textarea>
               
               <div class="contact__error-container">
-                <span class="contact__error" *ngIf="submitted && f['message'].errors">
+                <span class="contact__error" *ngIf="shouldShowMessageError()">
                   {{ 'CONTACT.MESSAGE_ERROR' | translate }}
                 </span>
               </div>
@@ -86,7 +89,7 @@ import { CommonModule } from '@angular/common';
             <div class="contact__form-group">
               <label class="contact__checkbox-label">
                 <input
-                  type="checkbox"
+                 [class.is-invalid]="submitted && f['privacyPolicy']?.errors"
                   formControlName="privacyPolicy">
                 <span class="contact__checkbox-custom"></span>
                 <span class="contact__checkbox-text">
@@ -441,6 +444,73 @@ import { CommonModule } from '@angular/common';
         width: 100%;
       }
     }
+
+    /* Autofill Styles Neutralization - Critical for Design Preservation */
+    /* Chrome, Edge, Safari - Neutralize autofill background and text colors */
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    textarea:-webkit-autofill:active {
+      /* Force original background using box-shadow trick */
+      -webkit-box-shadow: 0 0 0 1000px rgba(20, 29, 47, 0.1) inset !important;
+      box-shadow: 0 0 0 1000px rgba(20, 29, 47, 0.1) inset !important;
+      /* Preserve original text color */
+      -webkit-text-fill-color: var(--color-text-primary) !important;
+      /* Maintain original border */
+      border: 1px solid #9747FF !important;
+      /* Delay background color change to prevent autofill yellow */
+      -webkit-transition: background-color 5000s ease-in-out 0s !important;
+      transition: background-color 5000s ease-in-out 0s !important;
+      /* Preserve original font properties */
+      font-size: 17px !important;
+      font-family: 'Poppins', sans-serif !important;
+      color: white !important;
+    }
+
+    /* Firefox autofill neutralization (Firefox 117+) */
+    input:autofill,
+    textarea:autofill {
+      background-color: rgba(20, 29, 47, 0.1) !important;
+      color: white !important;
+      border: 1px solid #9747FF !important;
+      filter: none !important;
+    }
+
+    /* Ensure consistent box-sizing for all form elements */
+    input,
+    textarea {
+      box-sizing: border-box !important;
+      /* Prevent layout shifts from autofill */
+      min-height: auto !important;
+    }
+
+    /* Preserve hover and focus states even with autofill */
+    input:-webkit-autofill:hover,
+    textarea:-webkit-autofill:hover {
+      -webkit-box-shadow: 0 0 0 1000px rgba(20, 29, 47, 0.1) inset !important;
+      box-shadow: 0 0 0 1000px rgba(20, 29, 47, 0.1) inset !important;
+      border-color: #70E61C !important;
+    }
+
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill:focus {
+      -webkit-box-shadow: 0 0 0 1000px rgba(20, 29, 47, 0.1) inset !important;
+      box-shadow: 0 0 0 1000px rgba(20, 29, 47, 0.1) inset !important;
+      border-color: #70E61C !important;
+      outline: none !important;
+    }
+
+    /* Preserve invalid state styling with autofill */
+    input:-webkit-autofill.is-invalid,
+    textarea:-webkit-autofill.is-invalid {
+      -webkit-box-shadow: 0 0 0 1000px rgba(20, 29, 47, 0.1) inset !important;
+      box-shadow: 0 0 0 1000px rgba(20, 29, 47, 0.1) inset !important;
+      border-color: red !important;
+    }
   `],
     animations: [fadeInLeft, fadeInUp]
 })
@@ -452,6 +522,55 @@ export class ContactSectionComponent implements OnInit {
   submitError = false;
   errorMessage = '';
 
+  // Custom validators
+  private nameValidator(control: AbstractControl): ValidationErrors | null {
+    if (!control.value) {
+      return { required: true };
+    }
+    
+    const value = control.value.trim();
+    if (value.length < 2) {
+      return { minlength: true };
+    }
+    
+    // Only allow letters, spaces, hyphens, and apostrophes
+    const namePattern = /^[a-zA-ZÀ-ÿ\s\-']+$/;
+    if (!namePattern.test(value)) {
+      return { pattern: true };
+    }
+    
+    return null;
+  }
+
+  private emailValidator(control: AbstractControl): ValidationErrors | null {
+    if (!control.value) {
+      return { required: true };
+    }
+    
+    const value = control.value.trim();
+    
+    // Enhanced email regex that's more permissive but still validates properly
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(value)) {
+      return { email: true };
+    }
+    
+    return null;
+  }
+
+  private messageValidator(control: AbstractControl): ValidationErrors | null {
+    if (!control.value) {
+      return { required: true };
+    }
+    
+    const value = control.value.trim();
+    if (value.length < 10) {
+      return { minlength: true };
+    }
+    
+    return null;
+  }
+
   constructor(
     private formBuilder: FormBuilder,
     private supabaseService: SupabaseService
@@ -459,9 +578,9 @@ export class ContactSectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.contactForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(2)]],
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', [Validators.required, Validators.minLength(10)]],
+      name: ['', [this.nameValidator.bind(this)]],
+      email: ['', [this.emailValidator.bind(this)]],
+      message: ['', [this.messageValidator.bind(this)]],
       privacyPolicy: [false, Validators.requiredTrue]
     });
   }
@@ -469,8 +588,60 @@ export class ContactSectionComponent implements OnInit {
   // Getter for easy access to form fields
   get f() { return this.contactForm.controls; }
 
+  // Smart validation display logic
+  shouldShowEmailError(): boolean {
+    const emailControl = this.f['email'];
+    
+    // Don't show error if field is empty and not touched
+    if (!emailControl.value && !emailControl.touched) {
+      return false;
+    }
+    
+    // Show error only if:
+    // 1. Form was submitted, OR
+    // 2. Field was touched and is invalid, OR
+    // 3. Field has significant content (more than 3 characters) and is invalid
+    return (this.submitted || 
+            (emailControl.touched && emailControl.invalid) ||
+            (emailControl.value && emailControl.value.length > 3)) && 
+           emailControl.invalid;
+  }
+
+  shouldShowMessageError(): boolean {
+    const messageControl = this.f['message'];
+    
+    // Don't show error if field is empty and not touched
+    if (!messageControl.value && !messageControl.touched) {
+      return false;
+    }
+    
+    // Show error only after field is touched or form is submitted
+    return (this.submitted || 
+            messageControl.touched) && 
+           messageControl.invalid;
+  }
+
+  getEmailErrorMessage(): string {
+    const emailControl = this.f['email'];
+    
+    if (emailControl.errors?.['required']) {
+      return 'CONTACT.EMAIL_ERROR';
+    }
+    
+    if (emailControl.errors?.['email']) {
+      return 'CONTACT.EMAIL_FORMAT_ERROR';
+    }
+    
+    return 'CONTACT.EMAIL_ERROR';
+  }
+
   async onSubmit(): Promise<void> {
     this.submitted = true;
+
+    // Mark all fields as touched to show validation errors
+    Object.keys(this.contactForm.controls).forEach(key => {
+      this.contactForm.get(key)?.markAsTouched();
+    });
 
     if (this.contactForm.invalid) {
       return;
@@ -491,6 +662,11 @@ export class ContactSectionComponent implements OnInit {
         this.submitSuccess = true;
         this.contactForm.reset();
         this.submitted = false;
+        
+        // Reset all validation states
+        Object.keys(this.contactForm.controls).forEach(key => {
+          this.contactForm.get(key)?.markAsUntouched();
+        });
       } else {
         this.submitError = true;
         this.errorMessage = 'There was an error sending your message. Please try again later.';

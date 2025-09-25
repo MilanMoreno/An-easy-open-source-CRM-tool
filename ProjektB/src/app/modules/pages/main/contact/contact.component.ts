@@ -77,7 +77,6 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy { // I
 
     // Stop here if form is invalid
     if (this.contactForm.invalid) {
-      console.log('Form is invalid'); // Optional: Log invalid state
       // Optionally trigger visual feedback for invalid fields if needed beyond CSS classes
       Object.keys(this.contactForm.controls).forEach(key => {
         this.contactForm.get(key)?.markAsTouched();
@@ -86,23 +85,19 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy { // I
     }
 
     // Form is valid, proceed with submission logic
-    console.log('Formular gesendet:', this.contactForm.value);
 
     // Use the existing HTTP post logic, but with reactive form values
     this.http.post(this.post.endPoint, this.post.body(this.contactForm.value), this.post.options)
       .subscribe({
         next: (response) => {
-          console.log('Form submission successful:', response);
           this.formSubmitted = true; // Show success feedback in template
           this.showSendingAlert(); // Show the visual alert animation
           this.resetFormAfterDelay();
         },
         error: (error) => {
-          console.error('Form submission error:', error);
           // Handle error - maybe show an error message to the user
           // For now, just log it. Consider adding user feedback.
         },
-        complete: () => console.info('Send post complete'),
       });
   }
 

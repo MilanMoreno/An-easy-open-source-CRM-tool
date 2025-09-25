@@ -1,49 +1,52 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LanguageService } from '../../../shared/services/language/language.service';
 
 @Component({
     selector: 'app-navigation-bar',
+    standalone: true,
     imports: [CommonModule, RouterModule, TranslateModule],
     template: `
     <nav class="nav">
       <div class="nav__container">
-        <a class="nav__logo" href="#top">
+        <a class="nav__logo" (click)="navigateToHome()">
           <img src="assets/img/logo.png" alt="Logo" class="nav__logo-img">
         </a>
 
-        <!-- Desktop Menu -->
-        <div class="nav__menu">
-          <ul class="nav__list">
-            <li *ngFor="let item of menuItems">
-              <a [href]="item.href" class="nav__link">
-                {{ item.label | translate }} 
-              </a>
-            </li>
-          </ul>
-        </div>
+        <div class="nav__right-section">
+          <!-- Desktop Menu -->
+          <div class="nav__menu">
+            <ul class="nav__list">
+              <li *ngFor="let item of menuItems">
+                <a (click)="navigateToSection(item.href)" class="nav__link">
+                  {{ item.label | translate }} 
+                </a>
+              </li>
+            </ul>
+          </div>
 
-        <!-- Desktop Language Selector -->
-        <div class="nav__language">
+          <!-- Desktop Language Selector -->
+          <div class="nav__language">
+            <button 
+              class="nav__lang-btn" 
+              *ngFor="let lang of languages"
+              (click)="switchLanguage(lang.code)">
+              <img [src]="lang.flag" [alt]="lang.name">
+            </button>
+          </div>
+
+          <!-- Mobile Menu Toggle -->
           <button 
-            class="nav__lang-btn" 
-            *ngFor="let lang of languages"
-            (click)="switchLanguage(lang.code)">
-            <img [src]="lang.flag" [alt]="lang.name">
+            class="nav__mobile-toggle" 
+            [class.nav__mobile-toggle--active]="isMobileMenuOpen"
+            (click)="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
         </div>
-
-        <!-- Mobile Menu Toggle -->
-        <button 
-          class="nav__mobile-toggle" 
-          [class.nav__mobile-toggle--active]="isMobileMenuOpen"
-          (click)="toggleMobileMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
 
       <!-- Mobile Menu -->
@@ -51,7 +54,7 @@ import { LanguageService } from '../../../shared/services/language/language.serv
         <div class="nav__mobile-content">
           <ul class="nav__mobile-list">
             <li *ngFor="let item of menuItems">
-              <a [href]="item.href" class="nav__mobile-link" (click)="closeMobileMenu()">
+              <a (click)="navigateToSection(item.href)" class="nav__mobile-link">
                 {{ item.label | translate }}
               </a>
             </li>
@@ -82,17 +85,32 @@ import { LanguageService } from '../../../shared/services/language/language.serv
       z-index: 100;
     }
 
-    .nav__container {
+  .nav__container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 100%;
-      padding: 0 2rem;
-      max-width: 1920px;
+      width: 100%;
+      max-width: var(--max-content-width);
       margin: 0 auto;
+      padding: 0 var(--content-padding-desktop);
+      box-sizing: border-box;
     }
 
+    @media (max-width: 1024px) {
+      .nav__container {
+        padding: 0 var(--content-padding-tablet);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav__container {
+        padding: 0 var(--content-padding-mobile);
+      }
+    }
+
+
     .nav__logo {
+      flex-shrink: 0;
       height: 80px;
       display: flex;
       align-items: center;
@@ -101,6 +119,12 @@ import { LanguageService } from '../../../shared/services/language/language.serv
     .nav__logo-img {
       height: 100%;
       width: auto;
+    }
+
+    .nav__right-section {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
     }
 
     .nav__list {
@@ -148,6 +172,28 @@ import { LanguageService } from '../../../shared/services/language/language.serv
         width: 100%;
         height: 100%;
         border-radius: 50%;
+      }
+    }
+
+    .nav__lang-btn {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: rgba(112, 230, 28, 0.1);
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        pointer-events: none;
       }
     }
 
@@ -268,30 +314,70 @@ import { LanguageService } from '../../../shared/services/language/language.serv
       }
     }
 
-    @media (max-width: 768px) {
+    .nav__mobile-lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: none;
+      border: 2px solid var(--color-accent-primary);
+      padding: 12px 16px;
+      border-radius: 8px;
+      color: var(--color-text-primary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      min-width: 120px;
+      justify-content: center;
+
+      &:hover {
+        background-color: var(--color-accent-primary);
+        transform: scale(1.02);
+      }
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      span {
+        font-size: 16px;
+        font-weight: 500;
+        pointer-events: none;
+      }
+    }
+     
+    @media (max-width: 910px) {
       .nav__menu,
       .nav__language {
         display: none;
       }
-
+ 
       .nav__mobile-toggle {
         display: block;
       }
     }
+
+   @media (max-width: 350px) {
+.nav__logo-img {
+      height: 75%;
+      width: auto;
+    }}
+
   `]
 })
 export class NavigationBarComponent {
   isMobileMenuOpen = false;
 
   menuItems = [
-    { href: '#about', label: 'HEADER.ABOUT_ME' },
-    { href: '#skills', label: 'HEADER.SKILLS' },
-    { href: '#portfolio', label: 'HEADER.PORTFOLIO' }
+    { href: 'about', label: 'HEADER.ABOUT_ME' },
+    { href: 'skills', label: 'HEADER.SKILLS' },
+    { href: 'portfolio', label: 'HEADER.PORTFOLIO' }
   ];
 
   languages = [
     { code: 'fr', name: 'Français', flag: 'assets/img/france.png' },
-    { code: 'tr', name: 'Türkçe', flag: 'assets/img/turkey.png' },
+    { code: 'tr', name: 'Türkçe',  flag: 'assets/img/turkey.png' },
     { code: 'de', name: 'Deutsch', flag: 'assets/img/de.png' },
     { code: 'en', name: 'English', flag: 'assets/img/en.png' },
     { code: 'es', name: 'Español', flag: 'assets/img/sp.png' }
@@ -299,15 +385,21 @@ export class NavigationBarComponent {
 
   constructor(
     private translateService: TranslateService,
-    private languageService: LanguageService // Inject LanguageService
+    private languageService: LanguageService,
+    private router: Router
   ) {
-    // Add languages - this is okay here or could be moved to app init
-    translateService.addLangs(['fr', 'tr', 'en', 'es', 'de']);
-    // Removed setDefaultLang - AppComponent handles initialization
+    this.translateService.addLangs(['fr', 'tr', 'en', 'es', 'de']);
+  }
+
+  navigateToHome(): void {
+    this.router.navigate(['/']).then(() => {
+      setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
+    });
+    this.closeMobileMenu();
   }
 
   switchLanguage(lang: string): void {
-    this.languageService.setLanguage(lang); // Use LanguageService to set and save
+    this.languageService.setLanguage(lang);
     this.closeMobileMenu();
   }
 
@@ -317,5 +409,112 @@ export class NavigationBarComponent {
 
   closeMobileMenu(): void {
     this.isMobileMenuOpen = false;
+  }
+
+  /** 1) Neu: Scrollt immer exakt auf die Überschrift (Heading) der Section */
+  navigateToSection(sectionId: string): void {
+    const doScroll = () => {
+      // Warte bis Layout stabil ist
+      setTimeout(() => {
+        const el = this.getScrollTarget(sectionId);
+        if (!el) return;
+
+        // 3× rAF für maximale Stabilität nach Orientation-/Layout-Änderung
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              const offset = this.getStickyOffset();
+              const elementRect = el.getBoundingClientRect();
+              const scrollY = window.scrollY;
+              
+              // Berechne exakte Position mit zusätzlichem Puffer für Überschrift
+              const targetY = elementRect.top + scrollY - offset - 20;
+              
+              console.log('Scroll Debug:', {
+                sectionId,
+                elementRect: elementRect.top,
+                scrollY,
+                offset,
+                targetY,
+                finalPosition: Math.max(0, targetY)
+              });
+              
+              window.scrollTo({ 
+                top: Math.max(0, targetY), 
+                behavior: 'smooth' 
+              });
+            });
+          });
+        });
+      }, 100);
+    };
+
+    if (this.router.url === '/') {
+      this.closeMobileMenu();
+      // Zusätzliche Verzögerung für Mobile Menu Animation
+      setTimeout(doScroll, this.isMobileMenuOpen ? 300 : 0);
+    } else {
+      this.router.navigate(['/']).then(() => {
+        this.closeMobileMenu();
+        setTimeout(doScroll, 200); // Mehr Zeit für Home+About rendern
+      });
+    }
+  }
+
+  /** 2) Neu: Ziel-Element priorisiert die Überschrift innerhalb der Section */
+  private getScrollTarget(sectionId: string): HTMLElement | null {
+    // Versuche zuerst die spezifische Überschrift zu finden
+    if (sectionId === 'about') {
+      const heading = document.querySelector('#about .about__heading') as HTMLElement;
+      const section = document.getElementById('about');
+      
+      // Priorisiere die Überschrift, aber fallback zur Section
+      return heading || section;
+    }
+    
+    if (sectionId === 'skills') {
+      const heading = document.querySelector('#skills .skills__title') as HTMLElement;
+      const section = document.getElementById('skills');
+      
+      return heading || section;
+    }
+    
+    if (sectionId === 'portfolio') {
+      const heading = document.querySelector('#portfolio .portfolio__title') as HTMLElement;
+      const section = document.getElementById('portfolio');
+      
+      return heading || section;
+    }
+    
+    if (sectionId === 'contact') {
+      const heading = document.querySelector('#contact .contact__title') as HTMLElement;
+      const section = document.getElementById('contact');
+      
+      return heading || section;
+    }
+    
+    return document.getElementById(sectionId);
+  }
+
+  /** 3) Verbessert: Offset wird live aus Header + Spacer gemessen (pixelgenau) */
+  private getStickyOffset(): number {
+    const header = document.querySelector('.nav') as HTMLElement;
+    const spacer = document.querySelector('.section-spacer') as HTMLElement;
+    
+    // Messe Header-Höhe live
+    const headerH = header ? header.getBoundingClientRect().height : 109;
+    
+    // Messe Spacer-Höhe live (wichtig für responsive Anpassungen)
+    const spacerH = spacer ? parseFloat(getComputedStyle(spacer).height || '0') : 0;
+    
+    // Zusätzlicher Puffer für bessere Sichtbarkeit der Überschrift
+    const visualPadding = 30;
+    
+    const totalOffset = headerH + spacerH + visualPadding;
+
+    // CSS Variable für optionale Nutzung
+    document.documentElement.style.setProperty('--scroll-offset', `${totalOffset}px`);
+    
+    return totalOffset;
   }
 }

@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { ClipboardManagerService } from '../../../shared/services/clipboard/clipboard.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-page-footer',
+    standalone: true,
     imports: [CommonModule, RouterModule, TranslateModule],
     template: `
     <footer class="footer">
@@ -15,8 +17,8 @@ import { ClipboardManagerService } from '../../../shared/services/clipboard/clip
             src="assets/img/logo.png" 
             alt="Logo" 
             class="footer__logo"
-            routerLink="/">
-          <a routerLink="/legal/imprint" class="footer__imprint">
+            (click)="navigateHome()">
+          <a (click)="navigateToImprint()" class="footer__imprint">
             Imprint
           </a>
         </div>
@@ -52,18 +54,34 @@ import { ClipboardManagerService } from '../../../shared/services/clipboard/clip
       width: 100%;
       background-color: var(--color-background-primary);
       padding: 2rem 0;
-    border-top: 2px solid #70E61C;
+      border-top: 2px solid #70E61C;
+      /* Ensure consistent footer height across all pages */
+      min-height: var(--footer-height);
+      max-height: var(--footer-height);
     }
 
     .footer__container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1200px;
+      width: 100%;
+      max-width: var(--max-content-width);
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0 var(--content-padding-desktop);
+      box-sizing: border-box;
     }
 
+    @media (max-width: 1024px) {
+      .footer__container {
+        padding: 0 var(--content-padding-tablet);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .footer__container {
+        padding: 0 var(--content-padding-mobile);
+      }
+    }
     .footer__left {
       display: flex;
       flex-direction: column;
@@ -88,9 +106,17 @@ import { ClipboardManagerService } from '../../../shared/services/clipboard/clip
       opacity: 0.8;
       transition: opacity 0.3s ease;
       margin-top: -1rem;
+      padding: 8px 16px;
+      border-radius: 4px;
+      display: inline-block;
+      min-height: 24px;
+      line-height: 1.5;
+      cursor: pointer;
+      margin: 0 15px;
 
       &:hover {
         opacity: 1;
+        background-color: rgba(112, 230, 28, 0.1);
       }
     }
 
@@ -137,8 +163,25 @@ import { ClipboardManagerService } from '../../../shared/services/clipboard/clip
         gap: 2rem;
       }
     }
-  `]
+    `]
 })
 export class PageFooterComponent {
-  constructor(public clipboardService: ClipboardManagerService) {}
+  constructor(
+    public clipboardService: ClipboardManagerService,
+    private router: Router
+  ) {}
+
+  navigateHome() {
+    this.router.navigate(['/']).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  navigateToImprint() {
+    this.router.navigate(['/legal/imprint']).then(() => {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      }, 0);
+    });
+  }
 }

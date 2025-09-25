@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-imprint-page',
@@ -33,20 +34,35 @@ import { TranslateModule } from '@ngx-translate/core';
       padding: 2rem;
       min-height: calc(100vh - var(--header-height) - var(--footer-height));
       background-color: var(--color-background-primary);
+      /* Ensure the legal page takes up the remaining space properly */
+      flex: 1;
     }
 
    .legal__container {
-  position: relative; /* oder ganz weglassen, falls nicht gebraucht */
-  display: flex;
-  flex-direction: column; /* wichtig! */
-  align-items: flex-start; /* oder center */
-  justify-content: flex-start;
-  padding: 1rem;
-  padding-top:100px;
-  width: 100%;
-  max-width: 800px;
-  color: var(--color-text-primary);
-}
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 100px var(--content-padding-desktop) 1rem;
+      width: 100%;
+      max-width: var(--max-content-width);
+      margin: 0 auto;
+      color: var(--color-text-primary);
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 1024px) {
+      .legal__container {
+        padding: 100px var(--content-padding-tablet) 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .legal__container {
+        padding: 100px var(--content-padding-mobile) 1rem;
+      }
+    }
 
 .legal__title {
   font-size: var(--font-size-heading-large);
@@ -80,4 +96,13 @@ import { TranslateModule } from '@ngx-translate/core';
     }
   `]
 })
-export class ImprintPageComponent {}
+export class ImprintPageComponent {
+  constructor(private router: Router, private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    // Scroll to top when component loads
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }, 0);
+  }
+}

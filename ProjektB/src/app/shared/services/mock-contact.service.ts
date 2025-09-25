@@ -12,7 +12,7 @@ export class MockContactService {
     message: string;
   }) {
     try {
-      console.log('Mock service: Submitting contact form:', formData);
+      console.log('🔧 Mock Contact Service: Simulating form submission...', formData);
       
       // Simulate API delay
       await new Promise(resolve => setTimeout(resolve, 1000));
@@ -32,12 +32,12 @@ export class MockContactService {
       // Store in memory (for demo purposes)
       this.contacts.push(contact);
       
-      console.log('Mock service: Contact form submitted successfully');
-      console.log('All contacts:', this.contacts);
+      console.log('✅ Mock Contact Service: Form data stored successfully:', contact);
+      console.log('📊 Mock Contact Service: Total contacts stored:', this.contacts.length);
       
       return { success: true, data: [contact] };
     } catch (error) {
-      console.error('Mock service: Error submitting form:', error);
+      console.error('❌ Mock Contact Service: Error occurred:', error);
       return { 
         success: false, 
         error: 'Mock service error. Please try again.' 

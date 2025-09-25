@@ -52,7 +52,6 @@ export class ProjectCardComponent implements AfterViewInit, OnDestroy {
       this.slideInRight = 'in';
       this.slideInBottom = 'in';
       this.cdr.detectChanges();
-      console.warn('IntersectionObserver is not available in this environment.');
     }
   }
 

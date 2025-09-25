@@ -61,11 +61,24 @@ import { TranslateModule } from '@ngx-translate/core';
     
     .portfolio__container {
       width: 100%;
-      max-width: 1440px;
+      max-width: var(--max-content-width);
       margin: 0 auto;
-      padding: 0 3rem;
+      padding: 0 var(--content-padding-desktop);
+      box-sizing: border-box;
       position: relative;
       z-index: 2;
+    }
+
+    @media (max-width: 1024px) {
+      .portfolio__container {
+        padding: 0 var(--content-padding-tablet);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .portfolio__container {
+        padding: 0 var(--content-padding-mobile);
+      }
     }
     
     .portfolio__header {

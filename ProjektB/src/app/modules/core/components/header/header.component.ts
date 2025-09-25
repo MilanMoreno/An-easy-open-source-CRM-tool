@@ -54,7 +54,6 @@ export class HeaderComponent implements OnInit, AfterViewInit { // Implemented O
     // Hier die Logik für das Aktualisieren der Inhalte entsprechend der Sprache
     // This might involve using TranslateService or other methods
     this.translate.use(this.currentLanguage); // Example using TranslateService
-    console.log(`Language changed to: ${this.currentLanguage}, updating content...`);
   }
 
   ngAfterViewInit() {

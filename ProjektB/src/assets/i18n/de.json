@@ -63,6 +63,7 @@
         "SEND_BUTTON": "Nachricht senden",
         "NAME_ERROR": "Bitte geben Sie einen Namen ein",
         "EMAIL_ERROR": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "EMAIL_FORMAT_ERROR": "Bitte geben Sie ein gültiges E-Mail-Format ein",
         "MESSAGE_ERROR": "Bitte geben Sie eine Nachricht ein",
         "PRIVACY_POLICY_TEXT1": "Ich habe die ",
         "PRIVACY_POLICY_TEXT2": "Datenschutzerklärung ",

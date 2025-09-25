@@ -63,6 +63,7 @@
         "SEND_BUTTON": "Enviar mensaje",
         "NAME_ERROR": "Por favor ingresa un nombre",
         "EMAIL_ERROR": "Por favor ingresa un email válido",
+        "EMAIL_FORMAT_ERROR": "Por favor ingresa un formato de email válido",
         "MESSAGE_ERROR": "Por favor ingresa un mensaje",
         "PRIVACY_POLICY_TEXT1": "He leído la ",
         "PRIVACY_POLICY_TEXT2": "política de privacidad",

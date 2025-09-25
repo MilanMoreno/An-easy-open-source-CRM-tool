@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-privacy-page',
@@ -25,15 +26,18 @@ import { TranslateModule } from '@ngx-translate/core';
           <h3>{{ 'PRIVACY_POLICY.DATA_COLLECTION.VISIT.TITLE' | translate }}</h3>
           <p>{{ 'PRIVACY_POLICY.DATA_COLLECTION.VISIT.DESCRIPTION' | translate }}</p>
           <ul>
-            <li *ngFor="let item of 'PRIVACY_POLICY.DATA_COLLECTION.VISIT.ITEMS' | translate | keyvalue">
-              {{ item.value }}
-            </li>
+            <li>{{ 'PRIVACY_POLICY.DATA_COLLECTION.VISIT.ITEMS.0' | translate }}</li>
+            <li>{{ 'PRIVACY_POLICY.DATA_COLLECTION.VISIT.ITEMS.1' | translate }}</li>
+            <li>{{ 'PRIVACY_POLICY.DATA_COLLECTION.VISIT.ITEMS.2' | translate }}</li>
+            <li>{{ 'PRIVACY_POLICY.DATA_COLLECTION.VISIT.ITEMS.3' | translate }}</li>
+            <li>{{ 'PRIVACY_POLICY.DATA_COLLECTION.VISIT.ITEMS.4' | translate }}</li>
           </ul>
           <p>{{ 'PRIVACY_POLICY.DATA_COLLECTION.VISIT.PURPOSE' | translate }}</p>
           <ul>
-            <li *ngFor="let item of 'PRIVACY_POLICY.DATA_COLLECTION.VISIT.PURPOSE_ITEMS' | translate | keyvalue">
-              {{ item.value }}
-            </li>
+            <li>{{ 'PRIVACY_POLICY.DATA_COLLECTION.VISIT.PURPOSE_ITEMS.0' | translate }}</li>
+            <li>{{ 'PRIVACY_POLICY.DATA_COLLECTION.VISIT.PURPOSE_ITEMS.1' | translate }}</li>
+            <li>{{ 'PRIVACY_POLICY.DATA_COLLECTION.VISIT.PURPOSE_ITEMS.2' | translate }}</li>
+            <li>{{ 'PRIVACY_POLICY.DATA_COLLECTION.VISIT.PURPOSE_ITEMS.3' | translate }}</li>
           </ul>
           <p>{{ 'PRIVACY_POLICY.DATA_COLLECTION.VISIT.LEGAL_BASIS' | translate }}</p>
 
@@ -47,9 +51,10 @@ import { TranslateModule } from '@ngx-translate/core';
           <h2>{{ 'PRIVACY_POLICY.DATA_TRANSFER.TITLE' | translate }}</h2>
           <p>{{ 'PRIVACY_POLICY.DATA_TRANSFER.DESCRIPTION' | translate }}</p>
           <ul>
-            <li *ngFor="let item of 'PRIVACY_POLICY.DATA_TRANSFER.ITEMS' | translate | keyvalue">
-              {{ item.value }}
-            </li>
+            <li>{{ 'PRIVACY_POLICY.DATA_TRANSFER.ITEMS.0' | translate }}</li>
+            <li>{{ 'PRIVACY_POLICY.DATA_TRANSFER.ITEMS.1' | translate }}</li>
+            <li>{{ 'PRIVACY_POLICY.DATA_TRANSFER.ITEMS.2' | translate }}</li>
+            <li>{{ 'PRIVACY_POLICY.DATA_TRANSFER.ITEMS.3' | translate }}</li>
           </ul>
         </section>
 
@@ -57,9 +62,13 @@ import { TranslateModule } from '@ngx-translate/core';
           <h2>{{ 'PRIVACY_POLICY.RIGHTS.TITLE' | translate }}</h2>
           <p>{{ 'PRIVACY_POLICY.RIGHTS.DESCRIPTION' | translate }}</p>
           <ul>
-            <li *ngFor="let item of 'PRIVACY_POLICY.RIGHTS.ITEMS' | translate | keyvalue">
-              {{ item.value }}
-            </li>
+            <li>{{ 'PRIVACY_POLICY.RIGHTS.ITEMS.0' | translate }}</li>
+            <li>{{ 'PRIVACY_POLICY.RIGHTS.ITEMS.1' | translate }}</li>
+            <li>{{ 'PRIVACY_POLICY.RIGHTS.ITEMS.2' | translate }}</li>
+            <li>{{ 'PRIVACY_POLICY.RIGHTS.ITEMS.3' | translate }}</li>
+            <li>{{ 'PRIVACY_POLICY.RIGHTS.ITEMS.4' | translate }}</li>
+            <li>{{ 'PRIVACY_POLICY.RIGHTS.ITEMS.5' | translate }}</li>
+            <li>{{ 'PRIVACY_POLICY.RIGHTS.ITEMS.6' | translate }}</li>
           </ul>
         </section>
 
@@ -89,17 +98,40 @@ import { TranslateModule } from '@ngx-translate/core';
       padding: 2rem;
       min-height: calc(100vh - var(--header-height) - var(--footer-height));
       background-color: var(--color-background-primary);
+      /* Ensure the legal page takes up the remaining space properly */
+      flex: 1;
     }
 
     .legal__container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 100px var(--content-padding-desktop) 1rem;
       width: 100%;
-      max-width: 800px;
+      max-width: var(--max-content-width);
+      margin: 0 auto;
       color: var(--color-text-primary);
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 1024px) {
+      .legal__container {
+        padding: 100px var(--content-padding-tablet) 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .legal__container {
+        padding: 100px var(--content-padding-mobile) 1rem;
+      }
     }
 
     .legal__title {
       font-size: var(--font-size-heading-large);
       margin-bottom: 2rem;
+      margin-top: 40px;
     }
 
     .legal__section {
@@ -166,4 +198,13 @@ import { TranslateModule } from '@ngx-translate/core';
     }
   `]
 })
-export class PrivacyPageComponent {}
+export class PrivacyPageComponent {
+  constructor(private router: Router, private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    // Scroll to top when component loads
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }, 0);
+  }
+}

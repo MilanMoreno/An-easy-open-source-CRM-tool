@@ -21,7 +21,7 @@ export class SupabaseService {
     message: string;
   }) {
     try {
-      console.log('Submitting form data to contact_requests_simple:', formData);
+      console.log('📧 Starting contact form submission...', formData);
       
       // Use the correct table name: contact_requests_simple
       const { data, error } = await this.supabase
@@ -36,11 +36,11 @@ export class SupabaseService {
         .select();
 
       if (error) {
-        console.error('Supabase error:', error);
+        console.error('❌ Supabase database error:', error);
         throw error;
       }
 
-      console.log('Form submitted successfully to Supabase:', data);
+      console.log('✅ Contact form data successfully saved to database:', data);
 
       // Optional: Call edge function to send email notification
       try {
@@ -55,17 +55,17 @@ export class SupabaseService {
         });
         
         if (emailError) {
-          console.warn('Email notification failed:', emailError);
+          console.warn('⚠️ Email sending failed, but form data was saved:', emailError);
         } else {
-          console.log('Email notification sent successfully:', emailData);
+          console.log('📨 Email notification sent successfully:', emailData);
         }
       } catch (emailError) {
-        console.warn('Email notification failed:', emailError);
+        console.warn('⚠️ Email service unavailable, but form data was saved:', emailError);
       }
 
       return { success: true, data };
     } catch (error) {
-      console.error('Error submitting form to Supabase:', error);
+      console.error('❌ Contact form submission failed:', error);
       return { 
         success: false, 
         error: error instanceof Error ? error.message : String(error) 

@@ -69,13 +69,31 @@ interface Skill {
      padding: 4rem 0;
       overflow: hidden;
     }
-    
+    .skills__name {
+  display: block;        /* span bekommt eigene Zeile */
+  text-align: center;    /* Text unter dem Icon zentrieren */
+  white-space: normal;   /* falls irgendwo nowrap vererbt wird */
+}
+
     .skills__container {
-      max-width: 1440px;
+      max-width: var(--max-content-width);
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0 var(--content-padding-desktop);
+      box-sizing: border-box;
       position: relative;
       z-index: 5;
+    }
+
+    @media (max-width: 1024px) {
+      .skills__container {
+        padding: 0 var(--content-padding-tablet);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .skills__container {
+        padding: 0 var(--content-padding-mobile);
+      }
     }
     
     .skills__content {
@@ -368,7 +386,8 @@ export class SkillsSectionComponent implements OnInit {
     { name: 'CSS', icon: 'assets/img/skills/css.png' },
     { name: 'API', icon: 'assets/img/skills/Api.png' },
     { name: 'SCRUM', icon: 'assets/img/skills/scrum.png' },
-    { name: 'Material', icon: 'assets/img/skills/material.png' }
+    { name: 'Material\u200BDesign', icon: 'assets/img/skills/material.png' }
+
   ];
 
   constructor(

@@ -147,24 +147,27 @@ import { TranslateModule } from '@ngx-translate/core';
         flex-direction: column;
         text-align: center;
         gap: 2rem;
-       margin-bottom: 60px;
+        margin-bottom: 60px;
       }
       
       .project__image-wrapper {
-        max-width: 500px;
-        width: 500px;
-        height: 273px;
+        max-width: 90vw;
+        width: auto;
+        height: auto;
+        display: flex;
+        justify-content: center;
       }
       
       .project__image {
-        width: 500px;
-        height: 273px;
-        object-fit: cover;
+        width: 100%;
+        height: auto;
+        max-width: 500px;
+        object-fit: contain;
       }
       
       .project__content {
-        max-width: 500px;
-        width: 500px;
+        max-width: 90vw;
+        width: auto;
       }
       
       .project__actions {
@@ -183,21 +186,24 @@ import { TranslateModule } from '@ngx-translate/core';
       }
       
       .project__image-wrapper {
-        max-width: 390px;
-        width: 390px;
-        height: 213.24px;
+        max-width: 90vw;
+        width: auto;
+        height: auto;
+        display: flex;
+        justify-content: center;
       }
       
       .project__image {
-        width: 390px;
-        height: 213.24px;
-        object-fit: cover;
+        width: 100%;
+        height: auto;
+        max-width: 390px;
+        object-fit: contain;
       }
       
       .project__content {
-        max-width: 390px;
-        width: 390px;
-       padding: 0 1rem;
+        max-width: 90vw;
+        width: auto;
+        padding: 0 1rem;
       }
       
       .project__title {
@@ -223,20 +229,22 @@ import { TranslateModule } from '@ngx-translate/core';
     /* Small mobile breakpoint - even more compact */
     @media (max-width: 480px) {
       .project__image-wrapper {
-        max-width: 340px;
-        width: 340px;
-        height: 186px;
+        max-width: 85vw;
+        width: auto;
+        height: auto;
       }
       
       .project__image {
-        width: 340px;
-        height: 186px;
+        width: 100%;
+        height: auto;
+        max-width: 340px;
+        object-fit: contain;
       }
       
       .project__content {
-        max-width: 340px;
-        width: 340px;
-       padding: 0 0.75rem;
+        max-width: 85vw;
+        width: auto;
+        padding: 0 0.75rem;
       }
       
       .project__actions {
@@ -254,20 +262,22 @@ import { TranslateModule } from '@ngx-translate/core';
     /* Extra small mobile breakpoint */
     @media (max-width: 360px) {
       .project__image-wrapper {
-        max-width: 300px;
-        width: 300px;
-        height: 164px;
+        max-width: 80vw;
+        width: auto;
+        height: auto;
       }
       
       .project__image {
-        width: 300px;
-        height: 164px;
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+        object-fit: contain;
       }
       
       .project__content {
-        max-width: 300px;
-        width: 300px;
-       padding: 0 0.5rem;
+        max-width: 80vw;
+        width: auto;
+        padding: 0 0.5rem;
       }
       
       .project__title {

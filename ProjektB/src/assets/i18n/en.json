@@ -64,6 +64,7 @@
         "NAME_ERROR": "Please enter a name",
         "NAME_PATTERN_ERROR": "Please enter only letters",
         "EMAIL_ERROR": "Please enter a valid email",
+        "EMAIL_FORMAT_ERROR": "Please enter a valid email format",
         "MESSAGE_ERROR": "Please enter a message",
         "PRIVACY_POLICY_TEXT1": "I have read the ",
         "PRIVACY_POLICY_TEXT2": "privacy policy",

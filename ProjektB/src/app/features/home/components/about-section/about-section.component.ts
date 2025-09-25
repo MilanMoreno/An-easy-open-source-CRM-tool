@@ -8,6 +8,9 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
     selector: 'app-about-section',
     imports: [CommonModule, TranslateModule],
     template: `
+    <!-- RESPONSIVE SPACER WAND zwischen Hero und About -->
+    <div class="section-spacer"></div>
+    
     <section class="about" id="about">
       <div class="about__container">
         <div class="about__content">
@@ -61,6 +64,153 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
     </section>
   `,
     styles: [`
+    /* RESPONSIVE SPACER WAND - Perfekt synchronisiert mit Navigation */
+    .section-spacer {
+      width: 100%;
+      background-color: var(--color-background-primary);
+      /* Desktop: Standard Abstand */
+      height: 20px;
+    }
+
+    /* ===== PORTRAIT (HOCHFORMAT) SPACER-HÖHEN ===== */
+    
+    /* iPhone 11 Pro 414x896 (Portrait) */
+    @media (max-width: 420px) and (min-height: 890px) and (orientation: portrait) {
+      .section-spacer {
+        height: 0px;
+      }
+    }
+
+    /* Galaxy Note 412x883 (Portrait) */
+    @media (max-width: 415px) and (min-height: 880px) and (orientation: portrait) {
+      .section-spacer {
+        height: 0px;
+      }
+    }
+
+    /* Galaxy S10 360x760 (Portrait) */
+    @media (max-width: 365px) and (min-height: 755px) and (orientation: portrait) {
+      .section-spacer {
+        height: 0px;
+      }
+    }
+
+    /* iPhone SE 375x667 (Portrait) */
+    @media (max-width: 380px) and (min-height: 660px) and (orientation: portrait) {
+      .section-spacer {
+        height: 0px;
+      }
+    }
+
+    /* iPad Mini 768x1024 (Portrait) */
+    @media (max-width: 770px) and (min-height: 1000px) and (orientation: portrait) {
+      .section-spacer {
+        height: 10px;
+      }
+    }
+
+    /* iPad 820x1180 (Portrait) */
+    @media (max-width: 825px) and (min-height: 1100px) and (orientation: portrait) {
+      .section-spacer {
+        height: 10px;
+      }
+    }
+
+    /* iPad Pro 1024x1366 (Portrait) */
+    @media (max-width: 1030px) and (min-height: 1300px) and (orientation: portrait) {
+      .section-spacer {
+        height: 15px;
+      }
+    }
+
+    /* ===== LANDSCAPE (QUERFORMAT) SPACER-HÖHEN ===== */
+    
+    /* iPhone 11 Pro 896x414 (Landscape) */
+    @media (max-width: 900px) and (max-height: 420px) and (orientation: landscape) {
+      .section-spacer {
+        height: 0px;
+      }
+    }
+
+    /* Galaxy Note 883x412 (Landscape) */
+    @media (max-width: 890px) and (max-height: 415px) and (orientation: landscape) {
+      .section-spacer {
+        height: 0px;
+      }
+    }
+
+    /* Galaxy S10 760x360 (Landscape) - WICHTIG: GROSSER SPACER! */
+    @media (max-width: 765px) and (max-height: 365px) and (orientation: landscape) {
+      .section-spacer {
+        height: 150px;
+      }
+    }
+
+    /* iPhone SE 667x375 (Landscape) */
+    @media (max-width: 670px) and (max-height: 380px) and (orientation: landscape) {
+      .section-spacer {
+        height: 80px;
+      }
+    }
+
+    /* iPad Mini 1024x768 (Landscape) */
+    @media (max-width: 1030px) and (max-height: 775px) and (orientation: landscape) {
+      .section-spacer {
+        height: 30px;
+      }
+    }
+
+    /* iPad 1180x820 (Landscape) */
+    @media (max-width: 1185px) and (max-height: 825px) and (orientation: landscape) {
+      .section-spacer {
+        height: 40px;
+      }
+    }
+
+    /* iPad Pro 1366x1024 (Landscape) */
+    @media (max-width: 1370px) and (max-height: 1030px) and (orientation: landscape) {
+      .section-spacer {
+        height: 50px;
+      }
+    }
+
+    /* ===== FALLBACK REGELN ===== */
+    
+    /* Allgemeine kleine Geräte Portrait */
+    @media (max-width: 480px) and (orientation: portrait) {
+      .section-spacer {
+        height: 0px;
+      }
+    }
+
+    /* Allgemeine kleine Geräte Landscape */
+    @media (max-height: 450px) and (orientation: landscape) {
+      .section-spacer {
+        height: 100px;
+      }
+    }
+
+    /* Tablet Portrait */
+    @media (min-width: 481px) and (max-width: 1024px) and (orientation: portrait) {
+      .section-spacer {
+        height: 10px;
+      }
+    }
+
+    /* Tablet Landscape */
+    @media (min-width: 481px) and (orientation: landscape) and (max-height: 768px) {
+      .section-spacer {
+        height: 30px;
+      }
+    }
+
+    /* Desktop */
+    @media (min-width: 1025px) {
+      .section-spacer {
+        height: 20px;
+      }
+    }
+
     .about {
       position: relative;
       display: flex;
@@ -69,7 +219,7 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
       background-color: var(--color-background-primary);
       min-height: 1000px;
       height: auto;
-     padding: 4rem 0;
+      padding: 0rem 0;
       overflow: visible;
     }
 
@@ -77,9 +227,23 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
       display: flex;
       justify-content: center;
       width: 100%;
-      max-width: 1200px;
-      padding: 0 2rem;
+      max-width: var(--max-content-width);
+      margin: 0 auto;
+      padding: 0 var(--content-padding-desktop);
+      box-sizing: border-box;
       overflow: visible;
+    }
+
+    @media (max-width: 1024px) {
+      .about__container {
+        padding: 0 var(--content-padding-tablet);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about__container {
+        padding: 0 var(--content-padding-mobile);
+      }
     }
 
     .about__content {
@@ -88,7 +252,6 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
       align-items: center;
       gap: 4rem;
       width: 100%;
-     
       overflow: visible;
     }
 
@@ -99,7 +262,7 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
 
     .about__heading {
       font-size: 89px;
-       padding-top: 0px !important;
+      padding-top: 0px !important;
       color: var(--color-text-primary);
       margin-bottom: 2rem;
     }
@@ -165,12 +328,25 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
       
     .about__shadow {
       position: absolute;
-      z-index: 0;
+      z-index: 0; 
       right: -50px;
       top: 20%;
       opacity: 0.7;
       max-width: 50%;
       height: auto;
+    } 
+
+    @media (min-width: 700px) and (max-width: 1500px) {
+      .about__shadow {
+        display: none;
+      }
+    }
+
+    @media (max-width: 669px) {
+      .about__shadow {
+        display: block;
+        top: 50%;
+      }
     }
 
     @media (max-width: 1024px) {
@@ -178,11 +354,8 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
         padding: 0 1rem;
       }
 
-      
-        
-    .about__heading {
-      font-size: 45px;
-       padding-top: 20px !important;
+      .about__heading {
+        font-size: 45px;
       }
     }
 
@@ -216,7 +389,6 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
     @media (max-width: 480px) {
       .about__heading {
         font-size: 26px;
-        
       }
 
       .about__intro,
@@ -233,6 +405,41 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
         height: 200px;
       }
     }
+/* ===== Spezifische Regel für 609x390 (Landscape) ===== */
+@media (max-width: 610px) and (max-height: 395px) and (orientation: landscape) {
+  .section-spacer {
+    height: 150px !important;
+  }
+  
+  .about__heading {
+    font-size: 49px;
+    padding-top: 0px !important; /* Zurück auf 0, da Spacer das regelt */
+    color: var(--color-text-primary);
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 360px) and (min-height: 440px) {
+  .about {
+    margin-top: 80px !important;
+  }
+  
+  .about__heading {
+    font-size: 26px; 
+    padding-top: 0px !important;
+    color: var(--color-text-primary);
+    margin-bottom: 2rem;
+  }
+}
+    /* ===== Responsive – 609x390 (Landscape) ===== */
+@media (max-width: 610px) and (max-height: 395px) and (orientation: landscape) {
+  .about__heading {
+    font-size: 49px;
+    padding-top: 75px !important;
+    color: var(--color-text-primary);
+    margin-bottom: 2rem;
+  }
+}
+
   `],
     animations: [fadeInLeft, fadeInUp]
 })

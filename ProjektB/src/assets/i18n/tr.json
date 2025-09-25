@@ -63,6 +63,7 @@
         "SEND_BUTTON": "Mesaj gönder",
         "NAME_ERROR": "Lütfen bir isim girin",
         "EMAIL_ERROR": "Lütfen geçerli bir e-posta adresi girin",
+        "EMAIL_FORMAT_ERROR": "Lütfen geçerli bir e-posta formatı girin",
         "MESSAGE_ERROR": "Lütfen bir mesaj girin",
         "PRIVACY_POLICY_TEXT1": "Gizlilik politikasını ",
         "PRIVACY_POLICY_TEXT2": "okudum",

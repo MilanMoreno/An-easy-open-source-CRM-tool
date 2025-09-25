@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, NgForm } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
+import { RouterModule, Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animations';
 import { SupabaseService } from '../../../../shared/services/supabase/supabase.service';
@@ -53,11 +53,12 @@ interface ContactFormData {
                 [(ngModel)]="formData.name"
                 #name="ngModel"
                 required
+                minlength="2"
                 [placeholder]="'CONTACT.NAME_PLACEHOLDER' | translate"
-                [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
+                [class.is-invalid]="shouldShowNameError(name)">
               
               <div class="contact__error-container">
-                <span class="contact__error" *ngIf="name.invalid && name.touched">
+                <span class="contact__error" *ngIf="shouldShowNameError(name)">
                   {{ 'CONTACT.NAME_ERROR' | translate }}
                 </span>
               </div>
@@ -71,13 +72,12 @@ interface ContactFormData {
                 [(ngModel)]="formData.email"
                 #email="ngModel"
                 required
-                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                 [placeholder]="'CONTACT.EMAIL_PLACEHOLDER' | translate"
-                [class.is-invalid]="email.invalid && (email.dirty || email.touched)">
+                [class.is-invalid]="shouldShowEmailError(email)">
               
               <div class="contact__error-container">
-                <span class="contact__error" *ngIf="email.invalid && email.touched && email.dirty">
-                  {{ 'CONTACT.EMAIL_ERROR' | translate }}
+                <span class="contact__error" *ngIf="shouldShowEmailError(email)">
+                  {{ getEmailErrorMessage(email) | translate }}
                 </span>
               </div>
             </div>
@@ -92,11 +92,11 @@ interface ContactFormData {
                 minlength="1"
                 rows="4"
                 [placeholder]="'CONTACT.MESSAGE_PLACEHOLDER' | translate"
-                [class.is-invalid]="message.invalid && (message.dirty || message.touched)">
+                [class.is-invalid]="shouldShowMessageError(message)">
               </textarea>
               
               <div class="contact__error-container">
-                <span class="contact__error" *ngIf="message.invalid && message.touched">
+                <span class="contact__error" *ngIf="shouldShowMessageError(message)">
                   {{ 'CONTACT.MESSAGE_ERROR' | translate }}
                 </span>
               </div>
@@ -113,7 +113,7 @@ interface ContactFormData {
                 <span class="contact__checkbox-custom"></span>
                 <span class="contact__checkbox-text">
                   {{ 'CONTACT.PRIVACY_POLICY_TEXT1' | translate }}
-                  <a routerLink="/legal/privacy">
+                  <a (click)="navigateToPrivacy()">
                     {{ 'CONTACT.PRIVACY_POLICY_TEXT2' | translate }}
                   </a>
                   {{ 'CONTACT.PRIVACY_POLICY_TEXT3' | translate }}
@@ -121,7 +121,7 @@ interface ContactFormData {
               </label>
               
               <div class="contact__error-container">
-                <span class="contact__error" *ngIf="privacyPolicy.invalid && privacyPolicy.touched">
+                <span class="contact__error" *ngIf="shouldShowPrivacyError(privacyPolicy)">
                   {{ 'CONTACT.PRIVACY_POLICY_ERROR' | translate }}
                 </span>
               </div>
@@ -176,16 +176,30 @@ interface ContactFormData {
       background-color: var(--color-background-primary);
       min-height: 600px;
       height: auto;
-      padding: 4rem 48px;
+      padding: 4rem var(--content-padding-desktop);
       width: 100%;
-      max-width: 1920px;
+      max-width: var(--max-content-width);
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 1024px) {
+      .contact__container {
+        padding: 4rem var(--content-padding-tablet);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact__container {
+        padding: 4rem var(--content-padding-mobile);
+      }
     }
 
     .contact__header {
       display: flex;
       align-items: center;
       width: 100%;
-      margin-bottom: 4rem;
+      margin-bottom: 8rem;
       z-index: 60;
       position: relative;
     }
@@ -346,9 +360,16 @@ interface ContactFormData {
 
       a {
         color: var(--color-accent-secondary);
+          padding: 4px 8px;
+          border-radius: 4px;
+          display: inline-block;
+          min-height: 20px;
+          line-height: 1.4;
         margin: 0 5px;
+        cursor: pointer;
 
         &:hover {
+            background-color: rgba(112, 230, 28, 0.1);
           color: var(--color-accent-primary);
         }
       }
@@ -429,12 +450,13 @@ interface ContactFormData {
       bottom: 0;
       z-index: 1;
       max-width: 50%;
-      height: auto;
+      padding-top:30px;
+      height: auto; 
     }
 
     /* Responsive Design */
     @media (max-width: 1395px) {
-      .contact__content {
+      .contact__content { 
         flex-direction: column;
         align-items: center;
       }
@@ -613,14 +635,102 @@ export class ContactSectionComponent {
   submitSuccess = false;
   submitError = false;
   errorMessage = '';
+  formSubmitted = false;
 
   constructor(
     private supabaseService: SupabaseService,
-    private mockContactService: MockContactService
+    private mockContactService: MockContactService,
+    private router: Router
   ) {}
 
+  // Enhanced validation logic for template-driven forms
+  shouldShowNameError(nameControl: NgModel): boolean {
+    if (!nameControl.value && !nameControl.touched) {
+      return false;
+    }
+    
+    return (this.formSubmitted || (nameControl.touched ?? false)) && (nameControl.invalid ?? false);
+  }
+
+  shouldShowEmailError(emailControl: NgModel): boolean {
+    if (!emailControl.value && !emailControl.touched) {
+      return false;
+    }
+    
+    // Custom email validation logic
+    const emailValue = emailControl.value?.trim() || '';
+    
+    // Don't show error for very short inputs (less than 3 characters)
+    if (emailValue.length > 0 && emailValue.length < 3 && !emailControl.touched) {
+      return false;
+    }
+    
+    // Show error if form submitted or field touched and has reasonable content
+    return (this.formSubmitted || 
+            ((emailControl.touched ?? false) && emailValue.length > 0) ||
+            (emailValue.length > 3 && !this.isValidEmail(emailValue))) && 
+           ((emailControl.invalid ?? false) || !this.isValidEmail(emailValue));
+  }
+
+  shouldShowMessageError(messageControl: NgModel): boolean {
+    // Zeige Fehler wenn:
+    // 1. Das Formular wurde abgesendet UND das Feld ist ungültig, ODER
+    // 2. Das Feld wurde berührt (verlassen) UND ist ungültig
+    return (this.formSubmitted && (messageControl.invalid ?? false)) ||
+           ((messageControl.touched ?? false) && (messageControl.invalid ?? false));
+  }
+
+  shouldShowPrivacyError(privacyControl: NgModel): boolean {
+    return this.formSubmitted && !this.formData.privacyPolicy;
+  }
+
+  getEmailErrorMessage(emailControl: NgModel): string {
+    const emailValue = emailControl.value?.trim() || '';
+    
+    if (!emailValue) {
+      return 'CONTACT.EMAIL_ERROR';
+    }
+    
+    if (!this.isValidEmail(emailValue)) {
+      return 'CONTACT.EMAIL_FORMAT_ERROR';
+    }
+    
+    return 'CONTACT.EMAIL_ERROR';
+  }
+
+  private isValidEmail(email: string): boolean {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailPattern.test(email);
+  }
+
   async onSubmit(form: NgForm): Promise<void> {
-    if (form.invalid || this.isSubmitting) {
+    this.formSubmitted = true;
+    
+    console.log('🚀 Contact form submission started');
+    
+    // Mark all fields as touched to show validation errors
+    Object.keys(form.controls).forEach(key => {
+      form.controls[key].markAsTouched();
+    });
+    
+    // Check if form is valid
+    if (form.invalid) {
+      console.warn('⚠️ Form validation failed - form is invalid');
+      return;
+    }
+    
+    // Additional custom validation
+    const emailValid = this.isValidEmail(this.formData.email?.trim() || '');
+    const messageValid = (this.formData.message?.trim() || '').length >= 1;
+    const nameValid = (this.formData.name?.trim() || '').length >= 2;
+    
+    if (!emailValid || !messageValid || !nameValid || !this.formData.privacyPolicy) {
+      console.warn('⚠️ Custom validation failed:', {
+        emailValid,
+        messageValid,
+        nameValid,
+        privacyPolicyAccepted: this.formData.privacyPolicy
+      });
       return;
     }
 
@@ -629,8 +739,7 @@ export class ContactSectionComponent {
     this.submitError = false;
 
     try {
-      console.log('Submitting form data:', this.formData);
-      
+      console.log('📤 Attempting to submit to Supabase database...');
       // Try Supabase first
       let result = await this.supabaseService.submitContactForm({
         name: this.formData.name,
@@ -640,7 +749,7 @@ export class ContactSectionComponent {
 
       // If Supabase fails, use mock service as fallback
       if (!result.success) {
-        console.log('Supabase failed, using mock service as fallback');
+        console.warn('⚠️ Supabase failed, trying mock service as fallback...');
         result = await this.mockContactService.submitContactForm({
           name: this.formData.name,
           email: this.formData.email,
@@ -649,28 +758,21 @@ export class ContactSectionComponent {
       }
 
       if (result.success) {
-        console.log('Form submitted successfully:', result);
+        console.log('✅ Contact form submitted successfully!', result.data);
         this.submitSuccess = true;
-        form.resetForm();
         
-        // Reset form data
-        this.formData = {
-          name: '',
-          email: '',
-          message: '',
-          privacyPolicy: false
-        };
+        // Reset form and data
+        this.resetForm(form);
       } else {
-        console.error('Form submission failed:', result.error);
+        console.error('❌ Contact form submission failed:', result.error);
         this.submitError = true;
         this.errorMessage = result.error || 'There was an error sending your message. Please try again later.';
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
-      
+      console.error('❌ Unexpected error during submission:', error);
       // Final fallback to mock service
       try {
-        console.log('Using mock service as final fallback');
+        console.log('🔄 Trying mock service as final fallback...');
         const mockResult = await this.mockContactService.submitContactForm({
           name: this.formData.name,
           email: this.formData.email,
@@ -678,24 +780,50 @@ export class ContactSectionComponent {
         });
         
         if (mockResult.success) {
+          console.log('✅ Mock service submission successful!', mockResult.data);
           this.submitSuccess = true;
-          form.resetForm();
-          this.formData = {
-            name: '',
-            email: '',
-            message: '',
-            privacyPolicy: false
-          };
+          this.resetForm(form);
         } else {
+          console.error('❌ Mock service also failed:', mockResult.error);
           this.submitError = true;
           this.errorMessage = 'There was an error sending your message. Please try again later.';
         }
       } catch (mockError) {
+        console.error('❌ All submission methods failed:', mockError);
         this.submitError = true;
         this.errorMessage = 'There was an error sending your message. Please try again later.';
       }
     } finally {
       this.isSubmitting = false;
+      console.log('🏁 Contact form submission process completed');
     }
+  }
+
+  navigateToPrivacy() {
+    this.router.navigate(['/legal/privacy']).then(() => {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      }, 0);
+    });
+  }
+  private resetForm(form: NgForm): void {
+    // Reset Angular form
+    form.resetForm();
+    
+    // Reset component data
+    this.formSubmitted! = false;
+    
+    // Reset form data
+    this.formData! = {
+      name: '',
+      email: '',
+      message: '',
+      privacyPolicy: false
+    };
+    
+    // Hide success message after delay
+    setTimeout(() => {
+      this.submitSuccess! = false;
+    }, 3000);
   }
 }

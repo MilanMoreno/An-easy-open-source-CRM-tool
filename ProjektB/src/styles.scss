@@ -10,6 +10,12 @@
   --color-text-primary: #FFFFFF;
   --header-height: 109px;
   --footer-height: 200px;
+  
+  /* Consistent layout variables */
+  --max-content-width: 1440px;
+  --content-padding-desktop: 4rem;
+  --content-padding-tablet: 2rem;
+  --content-padding-mobile: 1rem;
 
   --font-family-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
   --font-size-base: 14px;
@@ -18,35 +24,50 @@
   --font-size-heading-small: 24px;
 }
 
-*, *::before, *::after {
-  cursor: none !important;
+/* Firefox-spezifische Cursor-Behandlung */
+@-moz-document url-prefix() {
+  /* Für Firefox: Behalte normale Cursor für bessere Navigation */
+  *, *::before, *::after {
+    cursor: auto !important;
+  }
+  
+  button, a, input, select, textarea, 
+  [role="button"], [type="button"], [type="submit"],
+  .btn, .button, .link {
+    cursor: pointer !important;
+  }
 }
 
-html {
-  cursor: none !important;
+/* Für alle anderen Browser (Chrome, Safari, Edge): Custom Cursor */
+@supports not (-moz-appearance: none) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+
+  html {
+    cursor: none !important;
+  }
+
+  body {
+    cursor: none !important;
+  }
+
+  button, a, input, select, textarea, 
+  [role="button"], [type="button"], [type="submit"],
+  .btn, .button, .link {
+    cursor: none !important;
+  }
+
+  *:hover {
+    cursor: none !important;
+  }
 }
 
-body {
-  cursor: none !important;
-}
-
-
-button, a, input, select, textarea, 
-[role="button"], [type="button"], [type="submit"],
-.btn, .button, .link {
-  cursor: none !important;
-}
-
-
-*:hover {
-  cursor: none !important;
-}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font-family-primary);
-  cursor: none !important;
   user-select: none;
   -webkit-user-select: none;
   -webkit-user-drag: none;
@@ -55,7 +76,6 @@ button, a, input, select, textarea,
 html {
   scroll-behavior: smooth;
   background-color: var(--color-background-primary);
-  cursor: none !important;
 }
 
 body {
@@ -64,25 +84,33 @@ body {
   color: var(--color-text-primary);
   font-size: var(--font-size-base);
   line-height: 1.5;
-  cursor: none !important;
   font-family: var(--font-family-primary);
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  cursor: none !important;
 }
 
-button, a, input, select, textarea, 
-[role="button"], [type="button"], [type="submit"],
-.btn, .button, .link {
-  cursor: none !important;
+/* Global content container for consistent alignment */
+.content-container-global {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding-desktop);
+  box-sizing: border-box;
 }
 
+@media (max-width: 1024px) {
+  .content-container-global {
+    padding: 0 var(--content-padding-tablet);
+  }
+}
 
-*:hover {
-  cursor: none !important;
+@media (max-width: 768px) {
+  .content-container-global {
+    padding: 0 var(--content-padding-mobile);
+  }
 }
 
 .visually-hidden {
@@ -116,25 +144,25 @@ button, a, input, select, textarea,
 }
 /* 10 px früher stoppen, wenn zu #portfolio gescrollt wird */
 #portfolio {
-  scroll-margin-top: 10px;   /* = 10 px weniger nach unten */
+  scroll-margin-top: 120px;   /* = weiter nach oben für bessere Sichtbarkeit */
 }
 
 /* Fix für Portfolio Section - Header Höhe berücksichtigen */
 section#portfolio,
 .portfolio {
-  scroll-margin-top: calc(var(--header-height) + 20px);
+  scroll-margin-top: calc(var(--header-height) + 120px);
 }
 
 /* Fix für Skills Section - Header Höhe berücksichtigen */
 section#skills,
 .skills {
-  scroll-margin-top: calc(var(--header-height) + 20px);
+  scroll-margin-top: calc(var(--header-height) + 120px);
 }
 
 /* Fix für About Section - Header Höhe berücksichtigen */
 section#about,
 .about {
-  scroll-margin-top: calc(var(--header-height) + 20px);
+  scroll-margin-top: calc(var(--header-height) + 120px);
 }
 .about__container {
   position: relative;
@@ -248,6 +276,48 @@ section#about,
 /* Global section styles */
 section {
   padding: 5rem 0;
+}
+
+/* CRITICAL FIX: ORIENTIERUNGS-ABHÄNGIGER ABSTAND ZWISCHEN HERO UND ABOUT */
+/* Diese Regel MUSS NACH den normalen section-Regeln stehen */
+
+/* Alle Querformat-Geräte: Großer Abstand nach Hero Section */
+@media (orientation: landscape) and (max-height: 500px) {
+  section.hero {
+    margin-bottom: 300px !important;
+  }
+}
+
+/* Spezifische Querformat-Geräte - EXTRA GROßE ABSTÄNDE */
+@media (max-width: 760px) and (max-height: 360px) and (orientation: landscape) {
+  section.hero {
+    margin-bottom: 350px !important;
+  }
+}
+
+@media (max-width: 883px) and (max-height: 412px) and (orientation: landscape) {
+  section.hero {
+    margin-bottom: 300px !important;
+  }
+}
+
+/* Hochformat: Kleinere Abstände */
+@media (orientation: portrait) {
+  section.hero {
+    margin-bottom: 150px !important;
+  }
+}
+
+@media (max-width: 360px) and (min-height: 760px) and (orientation: portrait) {
+  section.hero {
+    margin-bottom: 120px !important;
+  }
+}
+
+@media (max-width: 412px) and (min-height: 883px) and (orientation: portrait) {
+  section.hero {
+    margin-bottom: 100px !important;
+  }
 }
 
 /* Global button styles */
@@ -392,4 +462,56 @@ section {
   section {
     padding: 0.5rem 0;
   }
+}
+
+/* Global Autofill Styles Neutralization - Applied to ALL inputs across the application */
+/* This ensures consistent design preservation regardless of browser autofill behavior */
+
+/* Chrome, Edge, Safari - Neutralize autofill background and text colors */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:active {
+  /* Use a very long delay to prevent autofill background color changes */
+  -webkit-transition: background-color 5000s ease-in-out 0s !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+  /* Preserve original text color */
+  -webkit-text-fill-color: var(--color-text-primary) !important;
+  /* Force transparent background or match design */
+  -webkit-box-shadow: 0 0 0 1000px var(--color-background-primary) inset !important;
+  box-shadow: 0 0 0 1000px var(--color-background-primary) inset !important;
+  background-color: var(--color-background-primary) !important;
+  color: var(--color-text-primary) !important;
+}
+
+/* Firefox autofill neutralization (Firefox 117+) */
+input:autofill,
+textarea:autofill,
+select:autofill {
+  background-color: var(--color-background-primary) !important;
+  color: var(--color-text-primary) !important;
+  filter: none !important;
+}
+
+/* Ensure all form elements maintain consistent box-sizing */
+input,
+textarea,
+select {
+  box-sizing: border-box !important;
+}
+
+/* Prevent autofill from affecting custom styled elements */
+input[type="checkbox"]:-webkit-autofill,
+input[type="radio"]:-webkit-autofill {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
 }
