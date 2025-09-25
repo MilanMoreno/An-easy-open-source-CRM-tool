@@ -1,0 +1,273 @@
+@import './../../../../../styles.scss';
+@import './../../../mixins/mixin.scss';
+
+.flex-wrapper {
+    @include dflex();
+    width: 100%;
+    position: relative;
+}
+
+.content-container {
+    @include dflex(row, space-between);
+    position: relative;
+    height: 100vh;
+    background-color: $darkblue;
+    padding-left: 20%;
+    padding-right: 20%;
+    max-width: 1920px;
+    width:100%;
+}
+
+.skills {
+    max-width: 800px;
+}
+
+.skill-set {
+    @include dflex(row, flex-start);
+    flex-wrap: wrap;
+}
+
+.skill {
+    @include dflex(column);
+    padding: 30px;
+    width: 100px;
+
+    >img {
+        height: 60px;
+        width: 60px;
+
+        &:hover {
+            animation: bounce 1s linear;
+        }
+    }
+
+    >span {
+        font-size: 16px;
+        color: white;
+        font-weight: 700;
+        ;
+    }
+}
+
+@keyframes bounce {
+
+    20%,
+    50%,
+    80%,
+    to {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    70% {
+        transform: translateY(-15px);
+    }
+
+    90% {
+        transform: translateY(-4px);
+    }
+}
+
+.skills {
+    z-index: 51;
+}
+
+.text-container {
+
+    >p {
+        font-size: 16px;
+        color: white;
+    }
+}
+
+.skill-text {
+    width: 471px;
+    text-align: center;
+}
+
+.button-wrapper {
+    @include dflex();
+    height: 80px;
+}
+
+.button {
+    @include dflex();
+    width: 200px;
+    height: 20px;
+    color: white;
+    background-color: $green;
+    border-radius: 10px;
+    padding: 15px 30px 15px 30px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: $purple;
+        width: 210px;
+        height: 25px;
+    }
+}
+
+.mobile-button-wrapper {
+    display: none;
+    height: 80px;
+}
+
+.mobile-button {
+    @include dflex();
+    width: 100px;
+    height: 20px;
+    color: white;
+    background-color: $green;
+    border-radius: 10px;
+    padding: 15px 30px 15px 30px;
+    transition: all 0.3s ease;
+    z-index: 90;
+    margin-top: 10px;
+
+    &:hover {
+        background-color: $purple;
+        width: 110px;
+        height: 25px;
+    }
+}
+
+.shadow {
+    position: absolute;
+    left: 0;
+    top: 30%;
+    z-index: 50;
+}
+
+.headline-container {
+    @include dflex();
+}
+
+.deco-line {
+    display: none;
+    height: 4px;
+    width: 10vw;
+    background-color: $purple;
+    margin-left: 10px;
+}
+
+@media (max-width: 1724px) {
+
+    .content-container {
+        padding: 0;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+@media (max-width: 1307px) {
+
+    .content-container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media (max-width: 1155px) {
+
+    .content-container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+@media (max-width: 890px) {
+
+    .content-container {
+        @include dflex(column-reverse, center, center);
+    }
+
+    .skills {
+        max-width: 95vw;
+    }
+
+    .skill-set {
+        @include dflex();
+    }
+}
+
+@media (max-width: 580px) {
+
+    .text-container {
+        @include dflex(column, flex-end, flex-end);
+    }
+
+    .headline-container {
+        @include dflex(row, flex-end, center);
+        width: 100vw;
+    }
+
+    .headline {
+        font-size: 45px;
+    }
+
+    .content-container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .deco-line {
+        display: block;
+    }
+
+    .skill-text {
+        max-width: 80vw;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: right;
+    }
+
+    .button-wrapper {
+        display: none;
+    }
+
+    .mobile-button-wrapper {
+        display: flex;
+        @include dflex();
+        height: 80px;
+    }
+
+    .skills {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 510px) {
+
+    .skill-text {
+        width: auto;
+        text-wrap: wrap;
+    }
+
+    .skills {
+        max-width: auto;
+        margin-top: 5px;
+    }
+
+    .skill-set {
+        >img {
+            padding: 20px;
+
+        }
+    }
+
+    .skill {
+        padding: 19px;
+    }
+}
+
+@media (max-width: 510px) {
+
+    .content-container {
+        height: auto;
+        padding-top: 100px;
+        padding-bottom: 0px;
+    }
+}

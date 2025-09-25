@@ -1,0 +1,156 @@
+{
+    "HEADER": {
+        "ABOUT_ME": "À propos de moi",
+        "SKILLS": "Compétences",
+        "PORTFOLIO": "Portfolio"
+    },
+    "HERO": {
+        "JOBTITLE": "Développeur Frontend",
+        "LETSTALK": "Discutons !",
+        "IAM": "Je suis",
+        "NAME": "Milan Moreno",
+        "SCROLLDOWN": "Faites défiler ↓",
+        "EMAIL_COPIED": "E-mail copié !"
+    },
+    "ABOUT": {
+        "HEADLINE": "À propos de moi",
+        "INTRO": "Bonjour, je suis Milan Moreno, un développeur frontend basé à Fribourg, en Allemagne. Avec un fort accent sur la création d'expériences utilisateur exceptionnelles, je me spécialise dans le développement d'applications web modernes en utilisant des technologies de pointe et les meilleures pratiques du développement logiciel.",
+        "TEXT1": "Développeur passionné, je m'efforce de produire un code propre, maintenable et de mettre en œuvre des designs responsives qui fonctionnent parfaitement sur tous les appareils. Mon expertise en Angular et TypeScript me permet de créer des applications évolutives de niveau entreprise répondant aux plus hauts standards de performance et de fiabilité.",
+        "TEXT2": "J'évolue avec enthousiasme dans des environnements collaboratifs et j'ai fait mes preuves dans la livraison de projets complexes dans les délais. Mon engagement envers l'apprentissage continu me permet de rester à la pointe des tendances du développement web, garantissant des solutions innovantes aux défis techniques modernes."
+    },
+    "SKILLS": {
+        "GET_IN_TOUCH": "Me contacter",
+        "MY_SKILLS": "Mes compétences",
+        "DESCRIPTION": "Je suis spécialisé dans la création d'applications web dynamiques utilisant des technologies modernes. Mon expertise couvre le développement frontend avec une solide base en design responsive et interfaces utilisateur interactives."
+    },
+    "PORTFOLIO": {
+        "HEADLINE": "Portfolio",
+        "INTRODUCTION": "Bienvenue dans ma vitrine de projets – Chaque projet représente un défi unique relevé avec créativité et expertise technique. N'hésitez pas à les explorer et interagir avec eux.",
+        "PROJECTS": {
+            "0": {
+                "HEADLINE": "Join",
+                "TECH_STACK": "Angular, Typescript, HTML, CSS, Firebase",
+                "DESCRIPTION": "Une plateforme de gestion de tâches sophistiquée inspirée de la méthode Kanban. Les fonctionnalités incluent l'organisation des tâches par glisser-déposer, la collaboration en temps réel et un système intuitif d'attribution des utilisateurs."
+            },
+            "1": {
+                "HEADLINE": "El Pollo Loco",
+                "TECH_STACK": "JavaScript, HTML, CSS",
+                "DESCRIPTION": "Un jeu d'aventure simple créé avec HTML, CSS et JavaScript. Le jeu met en scène un personnage qui traverse un niveau, ramasse des bouteilles et des pièces tout en affrontant des ennemis."
+            },
+            "2": {
+                "HEADLINE": "Pokedex",
+                "TECH_STACK": "JavaScript, HTML, CSS, API",
+                "DESCRIPTION": "Une collection complète de tous les Pokémon existants, avec des descriptions détaillées de leurs caractéristiques, capacités et attributs uniques, accessible via une API."
+            },
+            "3": {
+                "HEADLINE": "QuizApp",
+                "TECH_STACK": "JavaScript, HTML, CSS",
+                "DESCRIPTION": "Une plateforme d'apprentissage interactive avec un système de quiz dynamique. Conçu avec des technologies web modernes, il propose une manière ludique de tester et renforcer ses connaissances grâce à des questions à choix multiples personnalisables et un retour immédiat."
+            }
+        },
+        "LIVE_TEST": "Test en ligne",
+        "GITHUB": "Github"
+    },
+    "CONTACT": {
+        "HEADLINE": "Contact",
+        "INTRODUCTION": "Collaborons ensemble",
+        "DESCRIPTION_1": "Contactez-moi via ce formulaire, je suis intéressé par vos idées et prêt à contribuer à vos projets grâce à mon travail.",
+        "DESCRIPTION_2": "Vous avez besoin d'un développeur frontend ?",
+        "DESCRIPTION_3": "Contactez-moi !",
+        "NAME_PLACEHOLDER": "Nom",
+        "EMAIL_PLACEHOLDER": "E-mail",
+        "MESSAGE_PLACEHOLDER": "Message",
+        "SEND_BUTTON": "Envoyer le message",
+        "NAME_ERROR": "Veuillez entrer un nom",
+        "EMAIL_ERROR": "Veuillez entrer un e-mail valide",
+        "MESSAGE_ERROR": "Veuillez entrer un message",
+        "PRIVACY_POLICY_TEXT1": "J'ai lu la ",
+        "PRIVACY_POLICY_TEXT2": "politique de confidentialité",
+        "PRIVACY_POLICY_TEXT3": " et j'accepte le traitement de mes données comme indiqué.",
+        "PRIVACY_POLICY_ERROR": "Vous devez accepter la politique de confidentialité",
+        "SUCCESS_MESSAGE": "Votre message a été envoyé avec succès"
+    },
+    "PRIVACY_POLICY": {
+        "HEADLINE": "Politique de Confidentialité",
+        "INTRO": "Avec cette politique de confidentialité, nous souhaitons vous informer sur les types de vos données personnelles (ci-après également dénommées \"données\") que nous traitons, à quelles fins et dans quelle mesure. La politique de confidentialité s'applique à tous les traitements de données personnelles que nous effectuons, tant dans le cadre de la fourniture de nos services que notamment sur nos sites web, dans les applications mobiles et au sein des présences en ligne externes, comme nos profils de médias sociaux.",
+        "RESPONSIBLE": {
+            "TITLE": "Responsable",
+            "DESCRIPTION": "Milan Moreno\nUntere Waldstr. 4\n79194 Gundelfingen\n\nAdresse e-mail : milan.moreno.crea@gmail.com"
+        },
+        "DATA_COLLECTION": {
+            "TITLE": "Aperçu des Traitements",
+            "VISIT": {
+                "TITLE": "Types de Données Traitées",
+                "DESCRIPTION": "Lors de l'utilisation de nos services en ligne, nous traitons les données suivantes :",
+                "ITEMS": {
+                    "0": "Données d'inventaire (par ex. noms, adresses)",
+                    "1": "Données de contact (par ex. e-mail, numéros de téléphone)",
+                    "2": "Données de contenu (par ex. saisies de texte, photographies, vidéos)",
+                    "3": "Données d'utilisation (par ex. sites web visités, intérêt pour le contenu)",
+                    "4": "Données de méta/communication (par ex. informations sur l'appareil, adresses IP)"
+                },
+                "PURPOSE": "Les données sont traitées aux fins suivantes :",
+                "PURPOSE_ITEMS": {
+                    "0": "Fourniture de services en ligne et convivialité",
+                    "1": "Mesures de sécurité",
+                    "2": "Mesure d'audience",
+                    "3": "Tâches administratives"
+                },
+                "LEGAL_BASIS": "Le traitement est basé sur l'art. 6(1)(f) RGPD (intérêts légitimes)."
+            },
+            "CONTACT_FORM": {
+                "TITLE": "Formulaire de Contact",
+                "DESCRIPTION": "Lorsque vous nous envoyez des demandes via le formulaire de contact, nous conservons vos informations du formulaire de demande, y compris les coordonnées que vous y avez fournies, pour traiter la demande et en cas de questions de suivi.",
+                "LEGAL_BASIS": "Le traitement est basé sur l'art. 6(1)(b) RGPD (exécution du contrat ou mesures précontractuelles).",
+                "DATA_DELETION": "Les données seront supprimées dès qu'elles ne seront plus nécessaires pour atteindre l'objectif de leur collecte. C'est généralement le cas lorsque la conversation respective avec l'utilisateur est terminée."
+            }
+        },
+        "DATA_TRANSFER": {
+            "TITLE": "Transfert de Données",
+            "DESCRIPTION": "Vos données personnelles ne seront pas transférées à des tiers à des fins autres que celles énumérées ci-dessous :",
+            "ITEMS": {
+                "0": "Respect des obligations légales",
+                "1": "Prévention des menaces",
+                "2": "Fins de poursuite judiciaire",
+                "3": "Hébergement et envoi d'e-mails"
+            }
+        },
+        "RIGHTS": {
+            "TITLE": "Vos Droits",
+            "DESCRIPTION": "Vous disposez des droits suivants concernant vos données personnelles :",
+            "ITEMS": {
+                "0": "Droit à l'information",
+                "1": "Droit de rectification ou de suppression",
+                "2": "Droit à la limitation du traitement",
+                "3": "Droit d'opposition au traitement",
+                "4": "Droit à la portabilité des données",
+                "5": "Droit de retirer le consentement",
+                "6": "Droit de déposer une plainte auprès d'une autorité de contrôle"
+            }
+        },
+        "OBJECTION": {
+            "TITLE": "Droit d'Opposition",
+            "DESCRIPTION": "Si nous traitons vos données personnelles sur la base d'intérêts légitimes, vous avez le droit de vous opposer à ce traitement.",
+            "CONTACT": "Si vous souhaitez exercer votre droit d'opposition, un e-mail à nous suffit."
+        },
+        "SECURITY": {
+            "TITLE": "Sécurité des Données",
+            "DESCRIPTION": "Nous prenons des mesures techniques et organisationnelles appropriées pour assurer un niveau de protection adapté au risque, en tenant compte de l'état de la technique, des coûts de mise en œuvre et de la nature, de la portée, du contexte et des finalités du traitement ainsi que des risques, dont le degré de probabilité et de gravité varie, pour les droits et libertés des personnes physiques.",
+            "TECH_MEASURES": "Les mesures comprennent notamment la garantie de la confidentialité, de l'intégrité et de la disponibilité des données en contrôlant l'accès physique aux données, ainsi que leur accès, saisie, transmission, disponibilité et séparation."
+        },
+        "CHANGES": {
+            "TITLE": "Modifications de la Politique de Confidentialité",
+            "DESCRIPTION": "Nous nous réservons le droit de modifier cette politique de confidentialité pour nous assurer qu'elle est toujours conforme aux exigences légales actuelles ou pour mettre en œuvre des changements dans nos services dans la politique de confidentialité, par exemple lors de l'introduction de nouveaux services. Votre prochaine visite sera soumise à la nouvelle politique de confidentialité."
+        }
+    },
+    "IMPRINT": {
+        "HEADLINE": "Mentions légales",
+        "CONTACT": "Contact",
+        "TELEPHONE": "Téléphone",
+        "EMAIL": "E-mail"
+    },
+    "FOOTER": {
+        "IMPRINT": "Mentions légales",
+        "EMAIL_COPIED": "E-mail copié !"
+    }
+}

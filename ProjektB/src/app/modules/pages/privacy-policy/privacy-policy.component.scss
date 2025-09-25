@@ -1,0 +1,26 @@
+@import './../../../../styles.scss';
+@import './../../mixins/mixin.scss';
+
+* {
+    margin: 0;
+    text-align: left;
+    width: 80%;
+    margin-bottom: 5px;
+    text-wrap: wrap;
+    word-break: break-all;
+}
+
+.privacy-policy-container {
+    @include dflex(column);
+    text-align: left;
+    width: 100vw;
+    min-height: 45vh;
+    overflow: auto;
+    color: white;
+}
+
+@media(max-width: 500px) {
+  *{
+    font-size: 14px;
+  }  
+} 

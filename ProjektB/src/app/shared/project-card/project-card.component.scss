@@ -1,0 +1,174 @@
+@import './../../../styles.scss';
+@import './../../../app/modules/mixins/mixin.scss';
+
+:host {
+  display: block; // Ensure it behaves like a block element
+  position: relative; // Establish stacking context for the host
+  z-index: 52; // Position above the green shadow (z-index 51)
+}
+
+.content-container {
+    @include dflex();
+    width: 100%;
+    margin-bottom: 100px;
+    position: relative; // Establish stacking context
+    z-index: 55; // Higher than green shadow (51)
+
+    >img {
+        height: 400px;
+        margin-left: 100px;
+        margin-right: 100px;
+        z-index: 60;
+    }
+
+    &.row-reverse {
+        flex-direction: row-reverse;
+    }
+}
+
+.align-right {
+    text-align: right;
+}
+
+.introduction-container {
+    width: 500px;
+    z-index: 70; // Higher than image (60)
+}
+
+.introduction-headline {
+    font-size: 32px;
+    color: var(--color-accent-secondary);
+    font-weight: 700;
+}
+
+.tech-stack {
+    color: var(--color-accent-primary);
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.introduction {
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.button-container {
+    @include dflex(row, space-between);
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.test-button, .git-button {
+    @include dflex();
+    width: 150px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 23px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.test-button {
+    background-color: var(--color-accent-secondary);
+
+    &:hover {
+        background-color: var(--color-accent-primary);
+    }
+}
+
+.git-button {
+    border: 1px solid var(--color-accent-primary);
+
+    &:hover {
+        background-color: var(--color-accent-primary);
+    }
+}
+
+@media (max-width: 1290px) {
+    .content-container {
+        flex-direction: column !important;
+        align-items: center;
+        z-index: 60;
+    }
+
+    .introduction-container {
+        text-align: center !important;
+        z-index: 60;
+    }
+
+    .introduction-headline {
+        position: relative;
+        text-align: center !important;
+        z-index: 60;
+    }
+
+    .tech-stack {
+        text-align: center !important;
+        z-index: 60;
+    }
+
+    .introduction {
+        text-align: center !important;
+        z-index: 60;
+    }
+
+    .button-container {
+        justify-content: center;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .content-container {
+        >img {
+            max-width: 70vw;
+            width: auto;
+            height: auto;
+            margin: 0 0 2rem;
+        }
+    }
+
+    .introduction-container {
+        max-width: 90vw;
+        width: auto;
+    }
+
+    .introduction-headline {
+        text-wrap: wrap;
+    }
+
+    .tech-stack {
+        text-wrap: wrap;
+    }
+
+    .introduction {
+        text-wrap: wrap;
+    }
+}
+
+@media (max-width: 515px) {
+    .test-button, .git-button {
+        width: 120px;
+    }
+}
+
+@media (max-width: 415px) {
+    .test-button, .git-button {
+        width: 100px;
+        height: 30px;
+        padding: 0 15px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 368px) {
+    .test-button, .git-button {
+        width: 80px;
+        font-size: 14px;
+    }
+}

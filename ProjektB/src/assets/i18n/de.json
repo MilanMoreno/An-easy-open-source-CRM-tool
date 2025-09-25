@@ -1,0 +1,156 @@
+{
+    "HEADER": {
+        "ABOUT_ME": "Über mich",
+        "SKILLS": "Fähigkeiten",
+        "PORTFOLIO": "Portfolio"
+    },
+    "HERO": {
+        "JOBTITLE": "Frontend-Entwickler",
+        "LETSTALK": "Kontakt",
+        "IAM": "Ich bin",
+        "NAME": "Milan Moreno",
+        "SCROLLDOWN": "Nach unten →",
+        "EMAIL_COPIED": "E-Mail kopiert!"
+    },
+    "ABOUT": {
+        "HEADLINE": "Über mich",
+        "INTRO": "Hi, ich bin Milan Moreno, ein Frontend-Entwickler aus Freiburg, Deutschland. Mit starkem Fokus auf außergewöhnliche Benutzererlebnisse spezialisiere ich mich auf die Entwicklung moderner Webanwendungen unter Verwendung modernster Technologien und Best Practices in der Softwareentwicklung.",
+        "TEXT1": "Als engagierter Entwickler zeichne ich mich durch die Erstellung von sauberem, wartbarem Code und die Implementierung responsiver Designs aus, die auf allen Geräten einwandfrei funktionieren. Meine Expertise in Angular und TypeScript ermöglicht es mir, skalierbare Unternehmensanwendungen zu entwickeln, die höchsten Standards an Leistung und Zuverlässigkeit entsprechen.",
+        "TEXT2": "Ich gedeihe in kollaborativen Umgebungen und habe nachweislich Erfahrung in der termingerechten Lieferung komplexer Projekte. Mein Engagement für kontinuierliches Lernen hält mich an der Spitze der Webentwicklungstrends und stellt sicher, dass ich innovative Lösungen für moderne technische Herausforderungen bieten kann."
+    },
+    "SKILLS": {
+        "GET_IN_TOUCH": "Kontakt",
+        "MY_SKILLS": "Meine Fähigkeiten",
+        "DESCRIPTION": "Ich habe Erfahrung in der Umsetzung von Projekten mit verschiedenen Frontend-Technologien und Konzepten gesammelt."
+    },
+    "PORTFOLIO": {
+        "HEADLINE": "Portfolio",
+        "INTRODUCTION": "Entdecken Sie hier eine Auswahl meiner Arbeiten - Interagieren Sie mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.",
+        "PROJECTS": {
+            "0": {
+                "HEADLINE": "Join",
+                "TECH_STACK": "Angular, Typescript, HTML, CSS, Firebase",
+                "DESCRIPTION": "Task-Manager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mithilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu."
+            },
+            "1": {
+                "HEADLINE": "Pokedex",
+                "TECH_STACK": "JavaScript, HTML, CSS",
+                "DESCRIPTION": "Der Pokédex ist ein digitales Nachschlagewerk im Pokémon-Universum, das detaillierte Informationen zu verschiedenen Pokémon-Arten liefert, einschließlich ihrer Fähigkeiten, Lebensräume und Entwicklungsstufen. Er ist ein unverzichtbares Werkzeug für Trainer, um die unterschiedlichen Kreaturen, denen sie auf ihren Abenteuern begegnen, zu katalogisieren und besser kennenzulernen."
+            },
+            "2": {
+                "HEADLINE": "Pokedex",
+                "TECH_STACK": "JavaScript, HTML, CSS, API",
+                "DESCRIPTION": "Eine umfassende Sammlung aller existierenden Pokémon mit detaillierten Beschreibungen ihrer Eigenschaften, Fähigkeiten und einzigartigen Merkmale, zugänglich über eine API."
+            },
+            "3": {
+                "HEADLINE": "QuizApp",
+                "TECH_STACK": "JavaScript, HTML, CSS",
+                "DESCRIPTION": "Eine kleine, einfache Multiple-Choice-Quiz-Funktion, die durch interaktive Fragen und Antworten das Lernen verbessern soll."
+            }
+        },
+        "LIVE_TEST": "Live Test",
+        "GITHUB": "Github"
+    },
+    "CONTACT": {
+        "HEADLINE": "Kontakt",
+        "INTRODUCTION": "Haben Sie ein Problem zu lösen?",
+        "DESCRIPTION_1": "Kontaktieren Sie mich über dieses Formular. Ich bin daran interessiert, von Ihnen zu hören, Ihre Ideen zu kennen und mit meiner Arbeit zu Ihren Projekten beizutragen.",
+        "DESCRIPTION_2": "Brauchen Sie einen Frontend-Entwickler?",
+        "DESCRIPTION_3": "Kontaktieren Sie mich!",
+        "NAME_PLACEHOLDER": "Name",
+        "EMAIL_PLACEHOLDER": "E-Mail",
+        "MESSAGE_PLACEHOLDER": "Nachricht",
+        "SEND_BUTTON": "Nachricht senden",
+        "NAME_ERROR": "Bitte geben Sie einen Namen ein",
+        "EMAIL_ERROR": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "MESSAGE_ERROR": "Bitte geben Sie eine Nachricht ein",
+        "PRIVACY_POLICY_TEXT1": "Ich habe die ",
+        "PRIVACY_POLICY_TEXT2": "Datenschutzerklärung ",
+        "PRIVACY_POLICY_TEXT3": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+        "PRIVACY_POLICY_ERROR": "Sie müssen der Datenschutzerklärung zustimmen",
+        "SUCCESS_MESSAGE": "Ihre Nachricht wurde erfolgreich gesendet"
+    },
+    "PRIVACY_POLICY": {
+        "HEADLINE": "Datenschutzerklärung",
+        "INTRO": "Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären, welche Arten Ihrer personenbezogenen Daten (nachfolgend auch kurz als \"Daten\" bezeichnet) wir zu welchen Zwecken und in welchem Umfang verarbeiten. Die Datenschutzerklärung gilt für alle von uns durchgeführten Verarbeitungen personenbezogener Daten, sowohl im Rahmen der Erbringung unserer Leistungen als auch insbesondere auf unseren Webseiten, in mobilen Applikationen sowie innerhalb externer Onlinepräsenzen, wie z.B. unserer Social-Media-Profile (nachfolgend zusammenfassend bezeichnet als \"Onlineangebot\").",
+        "RESPONSIBLE": {
+            "TITLE": "Verantwortlicher",
+            "DESCRIPTION": "Milan Moreno\nUntere Waldstr. 4\n79194 Gundelfingen\n\nE-Mail-Adresse: milan.moreno.crea@gmail.com"
+        },
+        "DATA_COLLECTION": {
+            "TITLE": "Übersicht der Verarbeitungen",
+            "VISIT": {
+                "TITLE": "Arten der verarbeiteten Daten",
+                "DESCRIPTION": "Bei der Nutzung unseres Onlineangebotes verarbeiten wir folgende Daten:",
+                "ITEMS": {
+                    "0": "Bestandsdaten (z.B. Namen, Adressen)",
+                    "1": "Kontaktdaten (z.B. E-Mail, Telefonnummern)",
+                    "2": "Inhaltsdaten (z.B. Texteingaben, Fotografien, Videos)",
+                    "3": "Nutzungsdaten (z.B. besuchte Webseiten, Interesse an Inhalten)",
+                    "4": "Meta-/Kommunikationsdaten (z.B. Geräte-Informationen, IP-Adressen)"
+                },
+                "PURPOSE": "Die Daten werden zu folgenden Zwecken verarbeitet:",
+                "PURPOSE_ITEMS": {
+                    "0": "Zurverfügungstellung des Onlineangebotes und Nutzerfreundlichkeit",
+                    "1": "Sicherheitsmaßnahmen",
+                    "2": "Reichweitenmessung",
+                    "3": "Verwaltungstechnische Aufgaben"
+                },
+                "LEGAL_BASIS": "Die Verarbeitung erfolgt auf Grundlage des Art. 6 Abs. 1 lit. f DSGVO (berechtigte Interessen)."
+            },
+            "CONTACT_FORM": {
+                "TITLE": "Kontaktformular",
+                "DESCRIPTION": "Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.",
+                "LEGAL_BASIS": "Die Verarbeitung erfolgt auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen).",
+                "DATA_DELETION": "Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind. Dies ist in der Regel dann der Fall, wenn die jeweilige Konversation mit dem Nutzer beendet ist."
+            }
+        },
+        "DATA_TRANSFER": {
+            "TITLE": "Datenweitergabe",
+            "DESCRIPTION": "Eine Übermittlung Ihrer persönlichen Daten an Dritte zu anderen als den im Folgenden aufgeführten Zwecken findet nicht statt:",
+            "ITEMS": {
+                "0": "Erfüllung rechtlicher Verpflichtungen",
+                "1": "Zur Abwehr von Gefahren",
+                "2": "Zu Zwecken der Rechtsverfolgung",
+                "3": "Hosting und E-Mail-Versand"
+            }
+        },
+        "RIGHTS": {
+            "TITLE": "Ihre Rechte",
+            "DESCRIPTION": "Sie haben gegenüber uns folgende Rechte hinsichtlich der Sie betreffenden personenbezogenen Daten:",
+            "ITEMS": {
+                "0": "Recht auf Auskunft",
+                "1": "Recht auf Berichtigung oder Löschung",
+                "2": "Recht auf Einschränkung der Verarbeitung",
+                "3": "Recht auf Widerspruch gegen die Verarbeitung",
+                "4": "Recht auf Datenübertragbarkeit",
+                "5": "Recht auf Widerruf einer Einwilligung",
+                "6": "Recht auf Beschwerde bei einer Aufsichtsbehörde"
+            }
+        },
+        "OBJECTION": {
+            "TITLE": "Widerspruchsrecht",
+            "DESCRIPTION": "Wenn wir Ihre personenbezogenen Daten auf Grundlage von berechtigten Interessen verarbeiten, haben Sie das Recht, Widerspruch gegen diese Verarbeitung einzulegen.",
+            "CONTACT": "Möchten Sie von Ihrem Widerspruchsrecht Gebrauch machen, genügt eine E-Mail an uns."
+        },
+        "SECURITY": {
+            "TITLE": "Datensicherheit",
+            "DESCRIPTION": "Wir treffen nach Maßgabe der gesetzlichen Vorgaben unter Berücksichtigung des Stands der Technik, der Implementierungskosten und der Art, des Umfangs, der Umstände und der Zwecke der Verarbeitung sowie der unterschiedlichen Eintrittswahrscheinlichkeiten und des Ausmaßes der Bedrohung der Rechte und Freiheiten natürlicher Personen geeignete technische und organisatorische Maßnahmen, um ein dem Risiko angemessenes Schutzniveau zu gewährleisten.",
+            "TECH_MEASURES": "Zu den Maßnahmen gehören insbesondere die Sicherung der Vertraulichkeit, Integrität und Verfügbarkeit von Daten durch Kontrolle des physischen und elektronischen Zugangs zu den Daten als auch des sie betreffenden Zugriffs, der Eingabe, der Weitergabe, der Sicherung der Verfügbarkeit und ihrer Trennung."
+        },
+        "CHANGES": {
+            "TITLE": "Änderung der Datenschutzerklärung",
+            "DESCRIPTION": "Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen, z.B. bei der Einführung neuer Services. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung."
+        }
+    },
+    "IMPRINT": {
+        "HEADLINE": "Impressum",
+        "CONTACT": "Kontakt",
+        "TELEPHONE": "Telefon",
+        "EMAIL": "Email"
+    },
+    "FOOTER": {
+        "IMPRINT": "Impressum",
+        "EMAIL_COPIED": "E-Mail kopiert!"
+    }
+}

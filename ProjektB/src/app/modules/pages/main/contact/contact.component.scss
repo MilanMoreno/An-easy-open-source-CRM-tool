@@ -1,0 +1,715 @@
+@import './../../../../../styles.scss';
+@import './../../../mixins/mixin.scss';
+
+.flex-wrapper {
+    @include dflex();
+    width: 100%;
+    position: relative;
+}
+
+.content-container {
+    position: relative;
+    @include dflex(column);
+    background-color: $darkblue;
+    height: 100vh;
+    width:100%;
+    max-width: 1920px;
+}
+
+.headline-container {
+    @include dflex(row);
+    width: 100%;
+    margin-bottom: 150px;
+    z-index: 60;
+}
+
+.line-wrapper {
+    position: relative;
+    width: 20vw;
+}
+
+.deco-line {
+    position: absolute;
+    background-color: $purple;
+    // width: 300px;
+    width: 999999px;
+    height: 4px;
+    right:0;
+    margin-right: 50px;
+}
+
+.headline {
+    width: 100%;
+    text-align: left;
+}
+
+.contact-container {
+    @include dflex();
+}
+
+.introduction {
+    @include dflex(column, start, flex-start);
+    width: 470px;
+    height: 500px;
+    margin-right: 100px;
+    z-index: 60;
+
+    >p {
+        font-size: 16px;
+        color: white;
+        font-weight: 400;
+    }
+}
+
+.introduction-headline {
+    color: white;
+    font-size: 32px;
+    font-weight: 700px;
+    z-index: 60;
+
+}
+
+.form-container {
+    width: 680px;
+    height: 500px; /* Keep existing height? Or use min-height from suggestion? Let's try min-height */
+    min-height: 450px; /* Added min-height from suggestion */
+    z-index: 60;
+    position: relative; /* Added position relative for absolute children */
+
+    >form {
+        width: 100%;
+        /* Add class="contact-form" in HTML */
+    }
+}
+
+.form-group {
+    @include dflex(column);
+    width: 100%;
+    margin-bottom: 20px; /* Existing margin */
+    position: relative; /* Added position relative for absolute error message */
+    margin-bottom: 25px; /* Increased margin for error message space */
+
+
+    >input {
+        width: 100%;
+        font-size: 17px;
+        border: 1px solid $purple;
+        border-radius: 10px;
+        padding: 15px 25px 15px 25px;
+        background-color: rgb(20, 29, 47, 0.1);
+        color: white;
+        /* Add class="form-control" in HTML */
+
+        &::placeholder {
+            color: white;
+        }
+
+        &:hover {
+            border: 1px solid $green;
+        }
+
+        &:focus {
+            border-color: $green;
+            outline: none;
+        }
+    }
+
+    >textarea {
+        width: 100%;
+        max-width: 100%;
+        min-height: 150px;
+        border: 1px solid $purple;
+        border-radius: 10px;
+        padding: 15px 25px 15px 25px;
+        background-color: rgb(20, 29, 47, 0.1);
+        color: white;
+        font-size: 17px;
+        /* Add class="form-control" in HTML */
+
+        &::placeholder {
+            color: white;
+        }
+
+        &:hover {
+            border: 1px solid $green;
+        }
+
+        &:focus {
+            border-color: $green;
+            outline: none;
+        }
+    }
+}
+
+/* New styles for form controls */
+.form-control {
+  width: 100%;
+  padding: 10px; /* Adjust padding if needed */
+  border: 1px solid #ccc; /* Use existing border or adjust */
+  border-radius: 4px; /* Adjust border-radius if needed */
+}
+
+/* Fehlermeldungsstil */
+.error-message {
+  position: absolute;
+  bottom: -20px; /* Position unter dem Eingabefeld */
+  left: 0;
+  color: #ff0000;
+  font-size: 12px;
+}
+
+.policy-container {
+    @include dflex(column);
+    height: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+    color: white;
+
+    >label {
+        @include dflex();
+        width: 100%;
+        height: 30px;
+
+        >p {
+            >a {
+                color: $purple;
+                margin-left: 5px;
+                margin-right: 5px;
+                text-decoration: none;
+
+                &:hover {
+                    color: $green;
+                }
+            }
+        }
+    }
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.container .checkmark {
+    width: 20px !important;
+    min-width: 20px;
+    height: 20px !important;
+    border: 2px solid $purple;
+    border-radius: 4px;
+    position: relative;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    margin-right: 10px;
+}
+
+.container .checkmark::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 12px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    transition: transform 0.2s ease;
+}
+
+input[type="checkbox"]:checked+.checkmark {
+    background-color: none;
+    border-color: #4CAF50;
+}
+
+input[type="checkbox"]:checked+.checkmark::after {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+}
+
+.container a {
+    color: $green;
+    text-decoration: none;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+.form-alert {
+    width: 100%;
+    color: red;
+}
+
+.is-invalid {
+    border-color: red !important;
+    caret-color: red !important;
+    background-image: url('./../../../../../assets/img/invalid.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-origin: content-box;
+}
+
+/* Updated form button container */
+.form-button-container {
+    @include dflex();
+    z-index: 60;
+    position: relative; /* Added position relative */
+    height: 50px; /* Added fixed height */
+    margin-top: 20px; /* Added margin-top */
+}
+
+/* Updated form button */
+.form-button, .submit-button { /* Apply to existing and new class */
+    width: 250px;
+    background-color: $green;
+    border-radius: 10px;
+    padding: 15px 30px 15px 30px;
+    color: white;
+    z-index: 60;
+    border: none; /* Added */
+    cursor: pointer; /* Added */
+    position: absolute; /* Added */
+    bottom: 0; /* Added */
+    left: 50%; /* Added */
+    transform: translateX(-50%); /* Added */
+
+    &:disabled {
+        opacity: 0.1;
+    }
+}
+
+/* Erfolgs- oder Fehlermeldung nach dem Absenden */
+.form-feedback {
+  position: absolute;
+  bottom: -30px; /* Position below button container */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: $green; /* Or use a different color for feedback */
+  font-size: 14px;
+}
+
+
+.go-to-start-button {
+    position: absolute;
+    right: 100px;
+    bottom: 50px;
+    height: 40px;
+    width: 40px;
+
+    &:hover {
+        filter: invert(0.5) sepia(1) saturate(5) hue-rotate(85deg) brightness(1.2);
+    }
+}
+
+.shadow-purple {
+    position: absolute;
+    z-index: 40;
+    left: 0;
+    bottom: 0;
+}
+
+.email-alert {
+    position: fixed;
+    bottom: -3000px;
+    left: 50%;
+    width: 100%;
+    z-index: 999;
+    transform: translate(-50%);
+    transition: all 0.2s ease-in-out, transform 2s ease-in-out 0.4s;
+}
+
+.email-alert.slide-in {
+    bottom: 300px;
+}
+
+.email-alert.slide-out {
+    bottom: -3000px;
+}
+
+$color-0: white;
+$color-1: #70E61C;
+$color-2: #fff;
+
+%mail-after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: 15px;
+    height: 4px;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+}
+
+%mail-before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 7px;
+    height: 6px;
+    background: white;
+}
+
+%success-after {
+    content: '';
+    position: absolute;
+    bottom: 12px;
+    left: 11px;
+    width: 15px;
+    height: 8px;
+    border-bottom: 2px solid $color-1;
+    border-left: 2px solid $color-1;
+    transform: rotate(-45deg);
+
+}
+
+.email-alert-container {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 240px);
+    width: 540px;
+    background-color: rgba(0, 0, 0, 0.062) !important;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.animation {
+    width: 540px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.i-mail {
+    width: 40px;
+    height: 30px;
+    border-radius: 5% 5%;
+    border: 2px solid white;
+    position: relative;
+    animation: transformS .3s linear;
+
+    &:after {
+        @extend %mail-after;
+    }
+
+    &:before {
+        @extend %mail-before;
+    }
+
+    @keyframes transformS {
+        50% {
+            transform: scale(.5, .5);
+            opacity: .5;
+        }
+    }
+
+    .mail-anim {
+        @extend .i-mail;
+        margin: -2px 0 0 -2px;
+        animation: moveL .8s linear;
+
+        &:after {
+            @extend %mail-after;
+        }
+
+        &:before {
+            @extend %mail-before;
+        }
+
+        @keyframes moveL {
+            100% {
+                transform: translateX(220px) rotateY(90deg);
+            }
+        }
+    }
+}
+
+.line {
+    padding: 1px 210px;
+    background-image: linear-gradient(to right, white 30%, rgba(255, 255, 255, 0) 0%);
+    background-position: top;
+    background-size: 15px 2px;
+    background-repeat: repeat-x;
+}
+
+.i-success {
+    width: 40px;
+    height: 30px;
+    border-radius: 5% 5%;
+    border: 2px solid $color-1;
+    position: relative;
+    animation: transformB .3s 1.4s linear forwards;
+
+    &:after {
+        @extend %success-after;
+        animation: transformBA .3s 1.4s linear forwards;
+    }
+
+    @keyframes transformB {
+        50% {
+            transform: scale(1.5, 1.5);
+            background: $color-1;
+        }
+
+        100% {
+            background: $color-1;
+        }
+    }
+
+    @keyframes transformBA {
+        100% {
+            border-bottom: 2px solid $color-2;
+            border-left: 2px solid $color-2;
+        }
+    }
+
+    .success-anim {
+        @extend .i-success;
+        margin: -2px 0 0 -2px;
+        animation: moveR .8s 1s linear;
+
+        &:after {
+            @extend %success-after;
+        }
+
+        @keyframes moveR {
+            0% {
+                transform: translateX(-220px) rotateY(90deg);
+            }
+
+            50% {
+                transform: translateX(0) rotateY(0);
+            }
+        }
+    }
+}
+
+.message {
+    text-align: center;
+    margin-top: 10px;
+
+    color: white;
+}
+
+@media (max-width: 1395px) {
+
+    .contact-container {
+        @include dflex(column);
+    }
+
+    .introduction {
+        width: auto;
+        height: auto;
+        margin-right: 0;
+        max-width: 80vw;
+    }
+
+    .form-container {
+        @include dflex();
+        width: 100%;
+        max-width: 80vh;
+    }
+
+    .container {
+        >p {
+            z-index: 60;
+        }
+
+        >a {
+            z-index: 60;
+        }
+    }
+
+    .headline-container {
+        margin-bottom: 0;
+    }
+}
+
+
+@media (max-width: 1315px) {
+    .form-group {
+        margin-bottom: 10px; /* Reverted margin? Let's keep the increased one: 25px */
+        margin-bottom: 25px; /* Keep increased margin */
+    }
+}
+
+@media (max-width: 1104px) {
+
+    .policy-container {
+        >label {
+            >p {
+                >a {
+                    color: $green;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: $purple;
+                    }
+                }
+            }
+        }
+    }
+
+    .shadow-purple {
+        position: absolute;
+        z-index: 40;
+        left: 0;
+        bottom: -200px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .shadow-purple {
+        position: absolute;
+        z-index: 40;
+        left: 0;
+        bottom: -200px;
+        height: 400px;
+    }
+
+    .line {
+        padding: 1px 110px;
+
+    }
+
+    .email-alert-container {
+
+        width: 340px;
+    }
+
+    .animation {
+        width: 340px;
+    }
+
+    .email-alert {
+        left: 55%;
+    }
+
+}
+
+@media (max-width: 750px) {
+
+    .form-container {
+        max-width: 80vw;
+    }
+}
+
+@media (max-width: 645px) {
+
+    .go-to-start-button {
+        right: 10px;
+        bottom: 50px;
+        z-index: 60;
+    }
+
+    .policy-container {
+        >label {
+            >p {
+                font-size: 12px;
+                max-width: 85%;
+            }
+        }
+    }
+
+    .form-alert {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 580px) {
+
+    .content-container {
+        height: auto;
+        padding-top: 0px;
+        padding-bottom: 50px;
+    }
+
+    .headline {
+        font-size: 45px;
+    }
+
+    .deco-line {
+        margin-right: 10px;
+        // width: 10vw;
+    }
+
+    .introduction-headline {
+        font-size: 23px;
+    }
+
+    .policy-container {
+        height: auto;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .shadow-purple {
+        position: absolute;
+        z-index: 40;
+        left: 0;
+        bottom: -200px;
+        height: 350px;
+    }
+
+    .line {
+        padding: 1px 50px;
+
+    }
+
+    .email-alert-container {
+        width: 169px;
+        overflow: hidden;
+    }
+
+    .animation {
+        width: 100px;
+    }
+
+    .email-alert {
+        left: 80%;
+        width: 100%;
+    }
+
+    .message {
+        display: none;
+    }
+}
+
+@media (max-width: 374px) {
+
+    .go-to-start-button {
+        height: 30px;
+        width: 30px;
+        right: 10px;
+        bottom: 5px;
+        z-index: 60;
+    }
+
+    .policy-container {
+        >label {
+            >p {
+                font-size: 10px;
+                max-width: 95%;
+            }
+        }
+    }
+
+    .shadow-purple {
+        position: absolute;
+        z-index: 40;
+        left: 0;
+        bottom: -200px;
+        height: 350px;
+    }
+}

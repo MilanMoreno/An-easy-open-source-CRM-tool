@@ -1,0 +1,62 @@
+<div class="flex-wrapper">
+  <div class="content-wrapper" id="hero-section" #hero>
+    <div class="content-container" id="hero-content">
+      <img class="hero-img" src="assets/img/hero-img.png" alt="" />
+
+      <div class="text-container-wrapper">
+        <div class="text-container">
+          <div class="introduce-text">
+            <div [@slideInOutLeft]="slideIn">
+              <div class="rotated-text-right color-white">
+                {{ "HERO.IAM" | translate }}
+              </div>
+            </div>
+            <div [@slideInFromBottom]="slideInBottom">
+              <p class="headline name">{{ "HERO.NAME" | translate }}</p>
+              <p class="profession">{{ "HERO.JOBTITLE" | translate }}</p>
+            </div>
+          </div>
+          <div class="button-wrapper">
+            <a [ngStyle]="{ color: 'white' }" href="#contact-section">
+              <div class="button">{{ "HERO.LETSTALK" | translate }}</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-footer-container">
+      <div class="line-wrapper">
+        <div class="decoration-line"></div>
+      </div>
+      <div class="socials">
+        <a target="_blank" href="https://github.com/MilanMoreno"
+          ><img src="assets/img/github.png" alt=""
+        /></a>
+        <img (click)="copyText()" src="assets/img/email.png" alt="" />
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/milan-moreno-a232432/"
+          ><img src="assets/img/linkedin.png" alt=""
+        /></a>
+        <p
+          (click)="copyText()"
+          [ngStyle]="{ color: 'white' }"
+          class="email-adress"
+        >
+          milan.moreno&#x40;gmail.com
+        </p>
+      </div>
+      <div>
+        <a class="scroll-down rotated-text-left" href="#about-section">{{
+          "HERO.SCROLLDOWN" | translate
+        }}</a>
+      </div>
+    </div>
+    <img class="vector-shape" src="assets/img/Vector shape hero.png" alt="" />
+    <img class="hero-img-shadow" src="assets/img/hero-shadows.png" alt="" />
+
+    <div #copyAlert class="copy-alert d-none">
+      {{ "HERO.EMAIL_COPIED" | translate }}
+    </div>
+  </div>
+</div>

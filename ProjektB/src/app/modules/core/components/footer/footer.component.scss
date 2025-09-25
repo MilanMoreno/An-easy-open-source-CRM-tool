@@ -1,0 +1,147 @@
+@import './../../../../../styles.scss';
+@import './../../../mixins/mixin.scss';
+
+.content-container {
+    @include dflex(row, space-between);
+    position: relative;
+    height: 200px;
+    z-index: 55;
+    background-color: $darkblue;
+    border-top: 2px solid $green;
+    padding-left: 100px;
+    padding-right: 200px;
+}
+
+.footer-links {
+    @include dflex(column);
+
+    >a {
+        width: 50%;
+        text-align: left;
+        color: white;
+        margin-top: -25px;
+
+        &:hover {
+            color: $green;
+        }
+    }
+
+    >img {
+        width: 420px;
+        margin: 0;
+    }
+}
+
+.copywrite {
+    width: 300px;
+    color: white;
+    font-size: 23px;
+}
+
+.mobile-imprint {
+    display: none;
+    width: 50%;
+    text-align: center;
+    color: white !important;
+    margin-bottom: 5px;
+
+    &:hover {
+        color: $green;
+    }
+}
+
+.socials {
+    @include dflex(row, flex-start, center);
+    z-index: 66;
+
+    >img {
+        margin-left: 13px;
+        font-size: 23px;
+
+        &:hover {
+            filter: brightness(0) saturate(100%) invert(76%) sepia(15%) saturate(4614%) hue-rotate(71deg) brightness(102%) contrast(101%);
+        }
+    }
+
+    >a {
+        @include dflex();
+        margin-left: 13px;
+        font-size: 23px;
+
+        >p {
+            &:hover {
+                color: $green;
+            }
+        }
+
+        >img {
+            &:hover {
+                filter: brightness(0) saturate(100%) invert(76%) sepia(15%) saturate(4614%) hue-rotate(71deg) brightness(102%) contrast(101%);
+            }
+        }
+    }
+}
+
+.copy-alert {
+    position: fixed;
+    bottom: -3000px;
+    left: 50%;
+    border-radius: 10px;
+    background-color: black;
+    opacity: 0.3;
+    z-index: 999;
+    padding: 10px;
+    color: white;
+    transform: translate(-50%);
+    transition: all 0.2s ease-in-out, transform 0.4s ease-in-out 0.4s;
+}
+
+.copy-alert.slide-in {
+    bottom: 50px;
+}
+
+.copy-alert.slide-out {
+    bottom: -3000px;
+}
+
+
+@media (max-width: 1175px) {
+    .content-container {
+        padding-left: 0px;
+        padding-right: 80px;
+    }
+
+}
+
+@media (max-width: 875px) {
+    .content-container {
+        @include dflex(column);
+        height: auto;
+
+        padding: 20px;
+    }
+
+    .copywrite {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .socials {
+        margin-bottom: 10px;
+    }
+
+    .footer-links {
+        >img {
+            max-width: 70vw;
+        }
+
+        >a {
+            display: none;
+        }
+    }
+
+    .mobile-imprint {
+        display: block;
+    }
+
+}

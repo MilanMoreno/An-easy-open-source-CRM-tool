@@ -1,0 +1,18 @@
+// Main component styles
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #141D2F;
+}
+
+// Container for all sections
+:host ::ng-deep {
+  .section-container {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+}

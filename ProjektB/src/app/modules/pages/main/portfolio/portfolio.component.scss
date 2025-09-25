@@ -1,0 +1,188 @@
+@import './../../../../../styles.scss';
+@import './../../../mixins/mixin.scss';
+
+.flex-wrapper2 {
+    @include dflex();
+    position: relative;
+}
+
+.content-container {
+    @include dflex(column);
+    padding-top: 100px;
+    padding-bottom: 50px;
+    background-color: $darkblue;
+    width: 100%;
+    position: relative;
+    max-width: 1920px;
+}
+
+.headline-content-container {
+    @include dflex(column);
+    width: 100%;
+    margin-bottom: 100px;
+    z-index: 60;
+}
+
+.headline-container {
+    @include dflex(row, flex-end);
+    width: 100%;
+    z-index: 60;
+}
+
+.headline {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.introduction {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    z-index: 60;
+}
+
+.big-purple-shadow {
+    position: absolute;
+    left: 0;
+    top: 20%;
+    z-index: 40;
+}
+
+.big-green-shadow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 51;
+}
+
+.line-wrapper {
+    position: relative;
+    width: 30vw;
+}
+
+.deco-line-left {
+    width: 10%;
+    background-color: $purple;
+    height: 4px;
+}
+
+.deco-line-right {
+    // width: 35vw;
+    background-color: $purple;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    width: 9999999px;
+
+}
+
+.projects-container {
+    z-index: 80;
+}
+
+@media (min-width: 1920px) {
+
+    .line-wrapper {
+        position: relative;
+        width: 20vw;
+    }
+}
+
+@media (max-width: 1445px) {
+
+    .deco-line-right {
+        width: 30vw;
+    }
+}
+
+@media (max-width: 1275px) {
+
+    .big-purple-shadow {
+        left: 0%;
+        top: 25%;
+        height: 750px;
+        width: 400px;
+    }
+}
+
+@media (max-width: 965px) {
+
+    // .deco-line-right {
+    //     width: 20vw;
+    // }
+
+    .deco-line-left {
+        width: 10%;
+    }
+}
+
+@media (max-width: 790px) {
+
+    .big-purple-shadow {
+
+        left: 0%;
+        top: 30%;
+        height: 650px;
+        width: 400px;
+    }
+}
+
+@media (max-width: 580px) {
+
+    .headline {
+        font-size: 45px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .introduction {
+        max-width: 80vw;
+        text-wrap: wrap;
+    }
+
+    // .deco-line-right {
+    //     width: 30vw;
+    // }
+
+    .big-purple-shadow {
+
+        left: 0%;
+        top: 25%;
+        height: 650px;
+        width: 400px;
+    }
+}
+
+@media (max-width: 460px) {
+
+    // .deco-line-right {
+    //     width: 20vw;
+    // }
+}
+
+@media (max-width: 380px) {
+
+    // .deco-line-right {
+    //     width: 10vw;
+    // }
+}
+
+@media (max-width: 340px) {
+
+    .big-purple-shadow {
+
+        left: 0%;
+        top: 30%;
+        height: 350px;
+        width: 300px;
+    }
+
+    .big-green-shadow {
+
+        right: 0;
+        top: auto;
+        bottom: -200px;
+        height: 500px;
+    }
+}

@@ -1,0 +1,392 @@
+@import './../../../../../styles.scss';
+@import './../../../mixins/mixin.scss';
+
+.flex-wrapper {
+    @include dflex();
+    position: relative;
+    width: 100%;
+}
+
+.content-wrapper {
+    position: relative;
+    height: calc(100vh - 109px);
+    background-color: $darkblue;
+    @include dflex();
+    width: 100%;
+    max-width: 1920px;
+}
+
+.content-container {
+    @include dflex(row, space-between, center);
+    height: calc(100vh - 200px);
+    overflow-y: hidden;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-img {
+    position: absolute;
+    z-index: 1;
+    right: 0px;
+    bottom: 50px;
+    height: 90vh;
+}
+
+.hero-img-shadow {
+    position: absolute;
+    right: -150px;
+    bottom: -100px;
+    height: 80vh;
+    z-index: 0;
+    transform: rotate(-5deg);
+}
+
+.text-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+}
+
+.text-container {
+    margin-right: 100px;
+    width: 900px;
+    z-index: 3;
+}
+
+.introduce-text {
+    @include dflex(row, center, center)
+}
+
+.rotated-text-right {
+    display: inline-block;
+    transform: rotate(-90deg);
+    font-size: 60px;
+    color: white;
+    text-wrap: nowrap;
+}
+
+
+.vector-shape {
+    display: none;
+    position: absolute;
+    width: 1440px;
+    left: -100px;
+    bottom: -150px;
+    height: 850px;
+    z-index: 1;
+    transform: rotate(-8deg);
+}
+
+.name {
+    margin: 0;
+    line-height: 1;
+}
+
+.profession {
+    color: $purple;
+    font-size: 58px;
+    margin: 0;
+    line-height: 1;
+}
+
+.button-wrapper {
+    width: 100%;
+    height: 62px;
+    margin-top: 30px;
+    @include dflex(row, center, center);
+}
+
+.button {
+    @include dflex(row, center, center);
+    width: 165px;
+    height: 58px;
+    border-radius: 10px;
+    padding: 15px, 30px, 15px, 30px;
+    margin-left: 70px;
+    background-color: $green;
+    color: white;
+    font-size: 23px;
+    z-index: 3;
+    transition: all 0.3s ease;
+
+    &:hover {
+        width: 170px;
+        height: 62px;
+        background-color: $purple;
+    }
+}
+
+.rotated-text-left {
+    display: inline-block;
+    transform: rotate(90deg);
+}
+
+.hero-footer-container {
+    @include dflex(row, flex-start, center);
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100px;
+    color: white;
+}
+
+.line-wrapper {
+    position: relative;
+    width: 10vw;
+}
+
+.decoration-line {
+    border-bottom: 4px solid $purple;
+    width: 9999999px;
+    margin-right: 50px;
+    position: absolute;
+    right: 0;
+}
+
+.socials {
+    @include dflex(row, flex-start, center);
+    width: 100%;
+    z-index: 10;
+
+    >img {
+        margin-left: 13px;
+
+        &:hover {
+            filter: brightness(0) saturate(100%) invert(76%) sepia(15%) saturate(4614%) hue-rotate(71deg) brightness(102%) contrast(101%);
+        }
+    }
+
+    >a {
+        @include dflex();
+        margin-left: 13px;
+        font-size: 23px;
+
+        >p {
+            &:hover {
+                color: $green;
+            }
+        }
+
+        >img {
+
+            &:hover {
+                filter: brightness(0) saturate(100%) invert(76%) sepia(15%) saturate(4614%) hue-rotate(71deg) brightness(102%) contrast(101%);
+            }
+        }
+    }
+}
+
+.scroll-down {
+    display: none;
+    width: 200px;
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    font-size: 20px;
+    color: white;
+
+    &:hover {
+        color: $green;
+    }
+}
+
+.padding-top {
+    padding-top: 108px;
+}
+
+.copy-alert {
+    position: fixed;
+    bottom: -3000px;
+    left: 50%;
+    border-radius: 10px;
+    background-color: black;
+    opacity: 0.3;
+    z-index: 999;
+    padding: 10px;
+    color: white;
+    transform: translate(-50%);
+    transition: all 0.2s ease-in-out, transform 0.4s ease-in-out 0.4s;
+}
+
+.copy-alert.slide-in {
+    bottom: 50px;
+}
+
+.copy-alert.slide-out {
+    bottom: -3000px;
+}
+
+.email-adress {
+    margin-left: 15px;
+    font-size: 23px;
+
+    &:hover {
+        color: $green !important;
+    }
+}
+
+@media (max-width: 2000px) {
+
+    .rotated-text-right {
+        font-size: 34px;
+    }
+
+    .name {
+        font-size: 58px;
+    }
+
+    .profession {
+        font-size: 38px;
+    }
+
+    .text-container {
+        margin-right: 50px;
+        margin-left: 100px;
+        width: 600px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .content-container {
+        @include dflex(column);
+    }
+
+    .content-container {
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    .text-container {
+        width: 100%;
+        margin-top: 30px;
+        z-index: 15;
+    }
+
+    .vector-shape {
+        display: block;
+    }
+
+    .introduce-text {
+        @include dflex(row, center, center);
+        width: 100%;
+    }
+
+    .button-wrapper {
+        @include dflex(row, center, center);
+    }
+
+    .button-wrapper {
+        margin-left: 0px;
+    }
+
+    .button {
+        margin-left: 0;
+    }
+
+    .hero-img {
+        height: 60vh;
+        bottom: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hero-img-shadow {
+        height: 70vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .socials {
+        @include dflex(row, center);
+        width: auto;
+        margin-right: 20vw;
+
+        >img {
+            margin-right: 13px;
+        }
+
+        >a {
+
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    }
+
+    .decoration-line {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .hero-footer-container {
+        height: auto;
+    }
+
+    .scroll-down {
+        display: block;
+    }
+
+    .email-adress {
+        display: none;
+    }
+}
+
+@media (max-width: 860px) {
+
+    .text-container {
+        margin-left: 0px;
+    }
+
+}
+
+@media (max-width: 760px) {
+
+    .scroll-down {
+        display: none;
+    }
+
+    .introduce-text {
+        width: auto;
+    }
+
+    .rotated-text-right {
+        font-size: 24px;
+    }
+
+    .name {
+        font-size: 48px;
+    }
+
+    .profession {
+        font-size: 28px;
+    }
+
+    .content-container {
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 432px) {
+
+    .rotated-text-right {
+        max-width: 50px;
+    }
+
+    // .line-wrapper {
+    //     width: 20vw;
+    //     transform: translate(-50%);
+    // }
+}
+
+@media (max-width: 375px) {
+
+    .name {
+        font-size: 38px;
+    }
+
+    .profession {
+        font-size: 25px;
+    }
+}

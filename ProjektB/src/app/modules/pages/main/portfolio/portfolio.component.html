@@ -1,0 +1,37 @@
+<div class="flex-wrapper2">
+  <div class="content-container" id="portfolio-section">
+    <div class="headline-content-container">
+      <div class="headline-container">
+        <div class="deco-line-left"></div>
+        <div class="headline">
+          {{ "PORTFOLIO.HEADLINE" | translate }}
+        </div>
+        <div class="line-wrapper">
+          <div class="deco-line-right"></div>
+        </div>
+      </div>
+      <div class="introduction">
+        {{ "PORTFOLIO.INTRODUCTION" | translate }}
+      </div>
+    </div>
+
+    <div class="projects-container">
+      <ng-container *ngFor="let project of projects; let i = index">
+        <app-project-card
+          [projectImage]="project.projectImage"
+          [headlineKey]="project.headlineKey"
+          [techStackKey]="project.techStackKey"
+          [descriptionKey]="project.descriptionKey"
+          [liveTestLink]="project.liveTestLink"
+          [gitLink]="project.gitLink"
+        ></app-project-card>
+      </ng-container>
+    </div>
+  </div>
+  <img
+    class="big-purple-shadow"
+    src="assets/img/shadow-purple-big.png"
+    alt=""
+  />
+  <img class="big-green-shadow" src="assets/img/shadow-green-big.png" alt="" />
+</div>

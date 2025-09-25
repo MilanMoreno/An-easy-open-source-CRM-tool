@@ -1,0 +1,156 @@
+{
+    "HEADER": {
+        "ABOUT_ME": "Hakkımda",
+        "SKILLS": "Yetenekler",
+        "PORTFOLIO": "Portfolyo"
+    },
+    "HERO": {
+        "JOBTITLE": "Frontend Geliştirici",
+        "LETSTALK": "İletişime Geç!",
+        "IAM": "Ben",
+        "NAME": "Milan Moreno",
+        "SCROLLDOWN": "Aşağı kaydır →",
+        "EMAIL_COPIED": "E-posta kopyalandı!"
+    },
+    "ABOUT": {
+        "HEADLINE": "Hakkımda",
+        "INTRO": "Merhaba, ben Milan Moreno, Almanya'nın Freiburg şehrinde yaşayan bir Frontend Geliştiriciyim. Olağanüstü kullanıcı deneyimleri yaratmaya odaklanarak, modern web uygulamalarını en son teknolojiler ve yazılım geliştirme best practice'lerini kullanarak geliştiriyorum.",
+        "TEXT1": "Kendini işine adamış bir geliştirici olarak, temiz ve sürdürülebilir kod yazma ve tüm cihazlarda kusursuz çalışan responsive tasarımlar oluşturma konusunda uzmanım. Angular ve TypeScript konusundaki uzmanlığım, en yüksek performans ve güvenilirlik standartlarını karşılayan ölçeklenebilir kurumsal uygulamalar geliştirmemi sağlıyor.",
+        "TEXT2": "İşbirlikçi ortamlarda başarılı oluyorum ve karmaşık projeleri zamanında teslim etme konusunda kanıtlanmış bir geçmişim var. Sürekli öğrenmeye olan bağlılığım, web geliştirme trendlerinin ön saflarında kalmamı ve modern teknik zorluklara yenilikçi çözümler sunabilmemi sağlıyor."
+    },
+    "SKILLS": {
+        "GET_IN_TOUCH": "İletişime Geç",
+        "MY_SKILLS": "Yeteneklerim",
+        "DESCRIPTION": "Modern teknolojileri kullanarak dinamik web uygulamaları oluşturma konusunda uzmanım. Uzmanlığım, responsive tasarım ve interaktif kullanıcı arayüzleriyle frontend geliştirme alanında geniş bir yelpazeye yayılıyor."
+    },
+    "PORTFOLIO": {
+        "HEADLINE": "Portfolyo",
+        "INTRODUCTION": "Proje vitrinine hoş geldiniz - Her proje, yaratıcılık ve teknik uzmanlıkla ele alınan benzersiz bir zorluğu temsil eder. Projeleri keşfetmekten ve onlarla etkileşime geçmekten çekinmeyin.",
+        "PROJECTS": {
+            "0": {
+                "HEADLINE": "Join",
+                "TECH_STACK": "Angular, Typescript, HTML, CSS, Firebase",
+                "DESCRIPTION": "Kanban metodolojisinden ilham alan sofistike bir görev yönetim platformu. Sürükle-bırak görev organizasyonu, gerçek zamanlı işbirliği ve sezgisel kullanıcı atama sistemleri gibi özellikler içerir."
+            },
+            "1": {
+                "HEADLINE": "El Pollo Loco",
+                "TECH_STACK": "JavaScript, HTML, CSS",
+                "DESCRIPTION": "HTML, CSS ve JavaScript ile oluşturulmuş basit bir macera oyunu. Oyun, bir seviyede gezinen, şişe ve madeni para toplayan ve düşmanlarla savaşan bir karakteri içerir."
+            },
+            "2": {
+                "HEADLINE": "Pokedex",
+                "TECH_STACK": "JavaScript, HTML, CSS, API",
+                "DESCRIPTION": "Bir API aracılığıyla erişilebilen, tüm mevcut Pokémon'ların özellikleri, yetenekleri ve benzersiz nitelikleriyle ilgili ayrıntılı açıklamalarını içeren kapsamlı bir koleksiyon."
+            },
+            "3": {
+                "HEADLINE": "QuizApp",
+                "TECH_STACK": "JavaScript, HTML, CSS",
+                "DESCRIPTION": "Özelleştirilebilir çoktan seçmeli sorular ve anında geri bildirim yoluyla bilgiyi test etmek ve geliştirmek için eğlenceli bir yol sunan interaktif bir öğrenme platformu."
+            }
+        },
+        "LIVE_TEST": "Canlı Test",
+        "GITHUB": "Github"
+    },
+    "CONTACT": {
+        "HEADLINE": "İletişim",
+        "INTRODUCTION": "Birlikte Çalışalım",
+        "DESCRIPTION_1": "Bu form aracılığıyla benimle iletişime geçin, fikirlerinizi duymak ve çalışmalarımla projelerinize katkıda bulunmak için sabırsızlanıyorum.",
+        "DESCRIPTION_2": "Bir Frontend geliştirici mi arıyorsunuz?",
+        "DESCRIPTION_3": "Benimle iletişime geçin!",
+        "NAME_PLACEHOLDER": "İsim",
+        "EMAIL_PLACEHOLDER": "E-posta",
+        "MESSAGE_PLACEHOLDER": "Mesaj",
+        "SEND_BUTTON": "Mesaj gönder",
+        "NAME_ERROR": "Lütfen bir isim girin",
+        "EMAIL_ERROR": "Lütfen geçerli bir e-posta adresi girin",
+        "MESSAGE_ERROR": "Lütfen bir mesaj girin",
+        "PRIVACY_POLICY_TEXT1": "Gizlilik politikasını ",
+        "PRIVACY_POLICY_TEXT2": "okudum",
+        "PRIVACY_POLICY_TEXT3": " ve verilerimin belirtildiği gibi işlenmesini kabul ediyorum.",
+        "PRIVACY_POLICY_ERROR": "Gizlilik politikasını kabul etmelisiniz",
+        "SUCCESS_MESSAGE": "Mesajınız başarıyla gönderildi"
+    },
+    "PRIVACY_POLICY": {
+        "HEADLINE": "Gizlilik Politikası",
+        "INTRO": "Bu gizlilik politikası ile, kişisel verilerinizin (bundan sonra \"veriler\" olarak da anılacaktır) hangi türlerini, hangi amaçlarla ve ne ölçüde işlediğimiz hakkında sizi bilgilendirmek istiyoruz. Gizlilik politikası, hizmetlerimizin sağlanması kapsamında ve özellikle web sitelerimizde, mobil uygulamalarımızda ve sosyal medya profillerimiz gibi harici çevrimiçi varlıklarımızda gerçekleştirdiğimiz tüm kişisel veri işleme faaliyetleri için geçerlidir.",
+        "RESPONSIBLE": {
+            "TITLE": "Sorumlu",
+            "DESCRIPTION": "Milan Moreno\nUntere Waldstr. 4\n79194 Gundelfingen\n\nE-posta adresi: milan.moreno.crea@gmail.com"
+        },
+        "DATA_COLLECTION": {
+            "TITLE": "İşleme Genel Bakış",
+            "VISIT": {
+                "TITLE": "İşlenen Veri Türleri",
+                "DESCRIPTION": "Çevrimiçi hizmetlerimizi kullanırken aşağıdaki verileri işliyoruz:",
+                "ITEMS": {
+                    "0": "Envanter verileri (örn. isimler, adresler)",
+                    "1": "İletişim verileri (örn. e-posta, telefon numaraları)",
+                    "2": "İçerik verileri (örn. metin girişleri, fotoğraflar, videolar)",
+                    "3": "Kullanım verileri (örn. ziyaret edilen web siteleri, içeriğe ilgi)",
+                    "4": "Meta/iletişim verileri (örn. cihaz bilgileri, IP adresleri)"
+                },
+                "PURPOSE": "Veriler aşağıdaki amaçlarla işlenir:",
+                "PURPOSE_ITEMS": {
+                    "0": "Çevrimiçi hizmetlerin sağlanması ve kullanıcı dostu olması",
+                    "1": "Güvenlik önlemleri",
+                    "2": "Erişim ölçümü",
+                    "3": "İdari görevler"
+                },
+                "LEGAL_BASIS": "İşleme, GDPR Madde 6(1)(f) (meşru menfaatler) temelinde gerçekleştirilir."
+            },
+            "CONTACT_FORM": {
+                "TITLE": "İletişim Formu",
+                "DESCRIPTION": "İletişim formu aracılığıyla bize sorgu gönderdiğinizde, sorguyu işlemek ve takip soruları olması durumunda kullanmak üzere, sağladığınız iletişim bilgileri de dahil olmak üzere sorgu formundaki bilgilerinizi saklarız.",
+                "LEGAL_BASIS": "İşleme, GDPR Madde 6(1)(b) (sözleşmenin ifası veya sözleşme öncesi tedbirler) temelinde gerçekleştirilir.",
+                "DATA_DELETION": "Veriler, toplanma amacına ulaşmak için artık gerekli olmadığında silinir. Bu genellikle ilgili kullanıcı ile görüşmenin sona erdiği zamandır."
+            }
+        },
+        "DATA_TRANSFER": {
+            "TITLE": "Veri Aktarımı",
+            "DESCRIPTION": "Kişisel verileriniz, aşağıda listelenenler dışındaki amaçlar için üçüncü taraflara aktarılmayacaktır:",
+            "ITEMS": {
+                "0": "Yasal yükümlülüklerin yerine getirilmesi",
+                "1": "Tehditlerin önlenmesi",
+                "2": "Yasal takip amaçları",
+                "3": "Barındırma ve e-posta gönderimi"
+            }
+        },
+        "RIGHTS": {
+            "TITLE": "Haklarınız",
+            "DESCRIPTION": "Kişisel verilerinizle ilgili olarak aşağıdaki haklara sahipsiniz:",
+            "ITEMS": {
+                "0": "Bilgi alma hakkı",
+                "1": "Düzeltme veya silme hakkı",
+                "2": "İşlemenin kısıtlanması hakkı",
+                "3": "İşlemeye itiraz hakkı",
+                "4": "Veri taşınabilirliği hakkı",
+                "5": "Onayı geri çekme hakkı",
+                "6": "Denetim makamına şikayette bulunma hakkı"
+            }
+        },
+        "OBJECTION": {
+            "TITLE": "İtiraz Hakkı",
+            "DESCRIPTION": "Kişisel verilerinizi meşru menfaatler temelinde işliyorsak, bu işlemeye itiraz etme hakkına sahipsiniz.",
+            "CONTACT": "İtiraz hakkınızı kullanmak istiyorsanız, bize bir e-posta göndermeniz yeterlidir."
+        },
+        "SECURITY": {
+            "TITLE": "Veri Güvenliği",
+            "DESCRIPTION": "Teknolojinin durumu, uygulama maliyetleri ve işlemenin niteliği, kapsamı, bağlamı ve amaçları ile gerçek kişilerin hakları ve özgürlükleri için riskin değişken olasılığı ve ciddiyeti dikkate alınarak, riske uygun bir koruma düzeyi sağlamak için uygun teknik ve organizasyonel önlemler alıyoruz.",
+            "TECH_MEASURES": "Önlemler özellikle, verilere fiziksel erişimin yanı sıra bunların erişimi, girişi, açıklanması, kullanılabilirliği ve ayrılması kontrolü yoluyla verilerin gizliliğini, bütünlüğünü ve kullanılabilirliğini sağlamayı içerir."
+        },
+        "CHANGES": {
+            "TITLE": "Gizlilik Politikasında Değişiklikler",
+            "DESCRIPTION": "Bu gizlilik politikasını, her zaman güncel yasal gerekliliklere uygun olmasını sağlamak veya yeni hizmetlerin tanıtılması gibi durumlarda hizmetlerimizdeki değişiklikleri gizlilik politikasında uygulamak için değiştirme hakkını saklı tutarız. Bir sonraki ziyaretinizde yeni gizlilik politikası geçerli olacaktır."
+        }
+    },
+    "IMPRINT": {
+        "HEADLINE": "Künye",
+        "CONTACT": "İletişim",
+        "TELEPHONE": "Telefon",
+        "EMAIL": "E-posta"
+    },
+    "FOOTER": {
+        "IMPRINT": "Künye",
+        "EMAIL_COPIED": "E-posta kopyalandı!"
+    }
+}

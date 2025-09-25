@@ -1,0 +1,69 @@
+<div class="flex-wrapper">
+  <div class="content-container" id="skills-section">
+    <div class="mobile-button-wrapper">
+      <div class="mobile-button">{{ "SKILLS.GET_IN_TOUCH" | translate }}</div>
+    </div>
+    <div class="skills" [@slideInOutLeft]="slideIn">
+      <div class="skill-set">
+        <div class="skill">
+          <img src="assets/img/skills/Angular.png" alt="" />
+          <span>Angular</span>
+        </div>
+        <div class="skill">
+          <img src="assets/img/skills/typescript.png" alt="" />
+          <span>Typescript</span>
+        </div>
+        <div class="skill">
+          <img src="assets/img/skills/Javascript.png" alt="" />
+          <span>JavaScript</span>
+        </div>
+        <div class="skill">
+          <img src="assets/img/skills/html.png" alt="" />
+          <span>HTML</span>
+        </div>
+        <div class="skill">
+          <img src="assets/img/skills/firebase.png" alt="" />
+          <span>Firebase</span>
+        </div>
+        <div class="skill">
+          <img src="assets/img/skills/git.png" alt="" />
+          <span>Git</span>
+        </div>
+        <div class="skill">
+          <img src="assets/img/skills/css.png" alt="" />
+          <span>CSS</span>
+        </div>
+        <div class="skill">
+          <img src="assets/img/skills/Api.png" alt="" />
+          <span>API</span>
+        </div>
+        <div class="skill">
+          <img src="assets/img/skills/scrum.png" alt="" />
+          <span>SCRUM</span>
+        </div>
+        <div class="skill">
+          <img src="assets/img/skills/material.png" alt="" />
+          <span>Material</span>
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+      <div class="headline-container">
+        <div class="headline text-center" [@slideInFromBottom]="slideInBottom">
+          {{ "SKILLS.MY_SKILLS" | translate }}
+        </div>
+        <div class="deco-line"></div>
+      </div>
+      <p class="skill-text">
+        {{ "SKILLS.DESCRIPTION" | translate }}
+      </p>
+
+      <div class="button-wrapper">
+        <a href="#portfolio-section"
+          ><div class="button">{{ "SKILLS.GET_IN_TOUCH" | translate }}</div></a
+        >
+      </div>
+    </div>
+  </div>
+  <img class="shadow" src="assets/img/green-shadow.png" alt="" />
+</div>

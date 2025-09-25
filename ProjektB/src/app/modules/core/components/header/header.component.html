@@ -1,0 +1,127 @@
+<div class="header-wrapper" id="hero" #header>
+  <div class="header">
+    <a [href]="linkUrl" class="header-logo">
+      <img
+        href="/assets/img/logo.png"
+        [src]="logoUrl"
+        alt="Logo"
+        [ngStyle]="{ 'height.px': 80 }"
+      />
+    </a>
+
+    <div class="nav-links">
+      <ul>
+        <li>
+          <a class="underline-link" href="#about">{{
+            "HEADER.ABOUT_ME" | translate
+          }}</a>
+        </li>
+        <li>
+          <a class="underline-link" href="#skills">{{
+            "HEADER.SKILLS" | translate
+          }}</a>
+        </li>
+        <li> 
+          <a class="underline-link" href="#portfolio">{{
+            "HEADER.PORTFOLIO" | translate
+          }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container" #burger>
+      <input
+        type="checkbox"
+        id="checkbox4"
+        class="checkbox4 visuallyHidden"
+        #checkbox4
+      />
+      <label for="checkbox4" (click)="toggleBurgerMenu()" id="burgerMenuButton">
+        <div class="hamburger hamburger4">
+          <span class="bar bar1"></span>
+          <span class="bar bar2"></span>
+          <span class="bar bar3"></span>
+          <span class="bar bar4"></span>
+          <span class="bar bar5"></span>
+        </div>
+      </label>
+    </div>
+
+    <div class="mobile-nav-links d-none" #burgerMenu>
+      <div class="mobile-link-wrapper">
+        <a (click)="linkClicked()" href="#about">{{
+          "HEADER.ABOUT_ME" | translate
+        }}</a>
+        <a (click)="linkClicked()" href="#skills">{{
+          "HEADER.SKILLS" | translate
+        }}</a>
+        <a (click)="linkClicked()" href="#portfolio">{{
+          "HEADER.PORTFOLIO" | translate
+        }}</a>
+        <!-- Updated Mobile Language Selector -->
+        <div class="mobile-language-buttons language-selector" #langButton>
+          <img
+            src="assets/img/de.png"
+            [class.active]="currentLanguage === 'de'"
+            (click)="changeLanguage('de')"
+            alt="Deutsch"
+            class="mobile-language-button"
+          />
+          <img
+            src="assets/img/en.png"
+            [class.active]="currentLanguage === 'en'"
+            (click)="changeLanguage('en')"
+            alt="English"
+            class="mobile-language-button"
+          />
+          <img
+            src="assets/img/france.png"
+            [class.active]="currentLanguage === 'fr'"
+            (click)="changeLanguage('fr')"
+            alt="Français"
+            class="mobile-language-button"
+          />
+          <img
+            src="assets/img/turkey.png"
+            [class.active]="currentLanguage === 'tr'"
+            (click)="changeLanguage('tr')"
+            alt="Türkçe"
+            class="mobile-language-button"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Updated Desktop Language Selector -->
+  <div class="language-buttons language-selector">
+     <img
+      src="assets/img/de.png"
+      [class.active]="currentLanguage === 'de'"
+      (click)="changeLanguage('de')"
+      alt="Deutsch"
+      class="language-button"
+    />
+    <img
+      src="assets/img/en.png"
+      [class.active]="currentLanguage === 'en'"
+      (click)="changeLanguage('en')"
+      alt="English"
+      class="language-button"
+    />
+    <img
+      src="assets/img/france.png"
+      [class.active]="currentLanguage === 'fr'"
+      (click)="changeLanguage('fr')"
+      alt="Français"
+      class="language-button"
+    />
+    <img
+      src="assets/img/turkey.png"
+      [class.active]="currentLanguage === 'tr'"
+      (click)="changeLanguage('tr')"
+      alt="Türkçe"
+      class="language-button"
+    />
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="content-container">
+  <div class="footer-links">
+    <img href="/" src="assets/img/logo.png" alt="" />
+    <a routerLink="/imprint">  {{ "FOOTER.IMPRINT" | translate }}</a>
+  </div>
+  <div class="copywrite">&copy; Milan Moreno</div>
+
+  <div class="socials">
+    <a target="_blank" class="social" href="https://github.com/MilanMoreno"><img src="assets/img/github.png" alt="" /></a>
+    <img (click)="copyText()" src="assets/img/email.png" alt="" />
+    <a target="_blank" class="social" href="https://www.linkedin.com/in/milan-moreno-9a7482360//"><img src="assets/img/linkedin.png" alt="" /></a>
+
+  </div>
+  <a routerLink="/imprint" class="mobile-imprint">Imprint</a>
+</div>
+<div #copyAlert class="copy-alert d-none">  {{ "FOOTER.EMAIL_COPIED" | translate }}</div>

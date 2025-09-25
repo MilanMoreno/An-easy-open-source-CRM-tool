@@ -1,0 +1,22 @@
+<div class="content-container">
+  <img [src]="projectImage" alt="Project Image" />
+  <div class="introduction-container">
+    <div class="introduction-headline">
+      {{ titleKey | translate }}
+    </div>
+    <div class="tech-stack">
+      {{ stackKey | translate }}
+    </div>
+    <p class="introduction">
+      {{ descriptionKey | translate }}
+    </p>
+    <div class="button-container">
+      <a [href]="demoUrl" target="_blank" class="test-button">
+        {{ 'PORTFOLIO.LIVE_TEST' | translate }}
+      </a>
+      <a [href]="repoUrl" target="_blank" class="git-button">
+        {{ 'PORTFOLIO.GITHUB' | translate }}
+      </a>
+    </div>
+  </div>
+</div>

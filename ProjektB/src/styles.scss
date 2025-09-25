@@ -1,0 +1,395 @@
+/* Import Tailwind CSS */
+@use 'tailwindcss/base' as *;
+@use 'tailwindcss/components' as *;
+@use 'tailwindcss/utilities' as *;
+
+:root {
+  --color-background-primary: #141D2F;
+  --color-accent-primary: #70E61C;
+  --color-accent-secondary: #9747FF;
+  --color-text-primary: #FFFFFF;
+  --header-height: 109px;
+  --footer-height: 200px;
+
+  --font-family-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+  --font-size-base: 14px;
+  --font-size-heading-large: 90px;
+  --font-size-heading-medium: 32px;
+  --font-size-heading-small: 24px;
+}
+
+*, *::before, *::after {
+  cursor: none !important;
+}
+
+html {
+  cursor: none !important;
+}
+
+body {
+  cursor: none !important;
+}
+
+
+button, a, input, select, textarea, 
+[role="button"], [type="button"], [type="submit"],
+.btn, .button, .link {
+  cursor: none !important;
+}
+
+
+*:hover {
+  cursor: none !important;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family-primary);
+  cursor: none !important;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-background-primary);
+  cursor: none !important;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  cursor: none !important;
+  font-family: var(--font-family-primary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: none !important;
+}
+
+button, a, input, select, textarea, 
+[role="button"], [type="button"], [type="submit"],
+.btn, .button, .link {
+  cursor: none !important;
+}
+
+
+*:hover {
+  cursor: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background-primary);
+  border-radius: 10px;
+}
+
+/* GLOBAL STYLES FOR ABOUT SHADOW - FIXED VERSION */
+
+/* Make sure the about section containers are positioned relative */
+.about {
+  position: relative;
+  overflow: visible !important;
+  overflow: visible;
+}
+/* 10 px früher stoppen, wenn zu #portfolio gescrollt wird */
+#portfolio {
+  scroll-margin-top: 10px;   /* = 10 px weniger nach unten */
+}
+
+/* Fix für Portfolio Section - Header Höhe berücksichtigen */
+section#portfolio,
+.portfolio {
+  scroll-margin-top: calc(var(--header-height) + 20px);
+}
+
+/* Fix für Skills Section - Header Höhe berücksichtigen */
+section#skills,
+.skills {
+  scroll-margin-top: calc(var(--header-height) + 20px);
+}
+
+/* Fix für About Section - Header Höhe berücksichtigen */
+section#about,
+.about {
+  scroll-margin-top: calc(var(--header-height) + 20px);
+}
+.about__container {
+  position: relative;
+  overflow: visible !important;
+  overflow: visible;
+}
+
+.about__content {
+  position: relative;
+  overflow: visible !important;
+  overflow: visible;
+}
+
+/* About Shadow Positioning - Fixed for all screen sizes */
+.about__shadow {
+  position: absolute;
+  z-index: 0;
+  right: -50px !important;
+  top: 20% !important; 
+  opacity: 0.7 !important;
+  max-width: 50% !important;
+}
+
+/* Contact Shadow Positioning */
+.contact__shadow {
+  position: absolute !important;
+  z-index: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  opacity: 1 !important;
+  max-width: 40% !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 992px) {
+  .contact__shadow {
+    max-width: 30% !important;
+    opacity: 0.3 !important;
+    bottom: -50px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact__shadow {
+    max-width: 25% !important;
+    opacity: 1 !important;
+    bottom: -30px !important;
+  }
+}
+
+/* Success message animation */
+.contact__success-message {
+  animation: fadeOut 5s forwards !important;
+}
+
+@keyframes fadeOut {
+  0%, 80% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+/* Responsive positioning for about shadow */
+@media (max-width: 1290px) {
+  .about__shadow {
+    top: 20% !important;
+    max-width: 45% !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .about__shadow {
+    top: 20% !important;
+    max-width: 40%;
+  }
+}
+
+@media (max-width: 600px) {
+  .about__shadow {
+    top: 20% !important;
+    max-width: 35%;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-secondary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-primary);
+}
+
+.text-center { text-align: center; }
+.hidden { display: none !important; }
+.d-none { display: none !important; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Global section styles */
+section {
+  padding: 5rem 0;
+}
+
+/* Global button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-secondary);
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  border: 2px solid var(--color-accent-primary);
+  color: var(--color-text-primary);
+  background-color: transparent;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-accent-primary);
+  transform: scale(1.05);
+}
+
+/* Responsive typography */
+@media (max-width: 1200px) {
+  :root {
+    --font-size-heading-large: 70px;
+    --font-size-heading-medium: 28px;
+    --font-size-heading-small: 22px;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --font-size-heading-large: 48px;
+    --font-size-heading-medium: 24px;
+    --font-size-heading-small: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-heading-large: 40px;
+    --font-size-heading-medium: 20px;
+    --font-size-heading-small: 16px;
+    --font-size-base: 13px;
+  }
+  
+  section {
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-heading-large: 32px;
+    --font-size-heading-medium: 18px;
+    --font-size-heading-small: 14px;
+    --font-size-base: 12px;
+  }
+  
+  section {
+    padding: 1rem 0;
+  }
+}
+
+/* Fix for vector shape to maintain position during zoom */
+.hero__vector-shape {
+  position: absolute !important;
+  bottom: -100px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 300px !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
+}
+
+.hero__vector-image {
+  width: 100% !important;
+  min-width: 1200px !important;
+  height: 100% !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  transform: translateY(60%) !important;
+}
+
+/* Ensure vector shape stays visible at all zoom levels */
+@media (min-width: 1200px) {
+  .hero__vector-image {
+    min-width: 1500px !important;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hero__vector-image {
+    min-width: 1800px !important;
+  }
+}
+
+/* Mobile vector shape fixes */
+@media (max-width: 900px) {
+  .hero__mobile-vector {
+    position: absolute !important;
+    bottom: -50px !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 10 !important;
+  }
+  
+  .hero__mobile-vector-image {
+    width: 100% !important;
+    min-width: 800px !important;
+    height: auto !important;
+    transform: translateY(0) !important;
+  }
+}
+
+/* Extra small screens and zoom levels */
+@media (max-width: 350px), (max-zoom: 0.5) {
+  :root {
+    --font-size-heading-large: 28px;
+    --font-size-heading-medium: 16px;
+    --font-size-heading-small: 12px;
+    --font-size-base: 11px; 
+  }
+  
+  section {
+    padding: 0.5rem 0;
+  }
+}

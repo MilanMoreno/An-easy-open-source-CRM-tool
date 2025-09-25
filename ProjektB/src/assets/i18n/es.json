@@ -1,0 +1,156 @@
+{
+    "HEADER": {
+        "ABOUT_ME": "Sobre mí",
+        "SKILLS": "Habilidades",
+        "PORTFOLIO": "Portafolio"
+    },
+    "HERO": {
+        "JOBTITLE": "Desarrollador Frontend",
+        "LETSTALK": "¡Hablemos!",
+        "IAM": "Soy",
+        "NAME": "Milan Moreno",
+        "SCROLLDOWN": "Desplázate →",
+        "EMAIL_COPIED": "¡Email copiado!"
+    },
+    "ABOUT": {
+        "HEADLINE": "Sobre mí",
+        "INTRO": "Hola, soy Milan Moreno, un Desarrollador Frontend basado en Friburgo, Alemania. Con un fuerte enfoque en crear experiencias de usuario excepcionales, me especializo en construir aplicaciones web modernas utilizando tecnologías de vanguardia y las mejores prácticas en desarrollo de software.",
+        "TEXT1": "Como desarrollador dedicado, sobresalgo en la creación de código limpio y mantenible, implementando diseños responsivos que funcionan perfectamente en todos los dispositivos. Mi experiencia en Angular y TypeScript me permite construir aplicaciones empresariales escalables que cumplen con los más altos estándares de rendimiento y fiabilidad.",
+        "TEXT2": "Prospero en entornos colaborativos y tengo un historial probado en la entrega de proyectos complejos a tiempo. Mi compromiso con el aprendizaje continuo me mantiene a la vanguardia de las tendencias en desarrollo web, asegurando que puedo proporcionar soluciones innovadoras a los desafíos técnicos modernos."
+    },
+    "SKILLS": {
+        "GET_IN_TOUCH": "Contactar",
+        "MY_SKILLS": "Mis habilidades",
+        "DESCRIPTION": "He ganado experiencia en la construcción de proyectos con varias tecnologías y conceptos frontend."
+    },
+    "PORTFOLIO": {
+        "HEADLINE": "Portafolio",
+        "INTRODUCTION": "Explora una selección de mi trabajo aquí - Interactúa con los proyectos para ver mis habilidades en acción.",
+        "PROJECTS": {
+            "0": {
+                "HEADLINE": "Join",
+                "TECH_STACK": "Angular, Typescript, HTML, CSS, Firebase",
+                "DESCRIPTION": "Gestor de tareas inspirado en el Sistema Kanban. Crea y organiza tareas usando funciones de arrastrar y soltar, asigna usuarios y categorías."
+            },
+            "1": {
+                "HEADLINE": "Pokemon",
+                "TECH_STACK": "JavaScript, HTML, CSS",
+                "DESCRIPTION": "La Pokédex es una enciclopedia digital que aparece en la franquicia Pokémon que proporciona información detallada sobre varias especies de Pokémon, incluyendo sus habilidades, hábitats y etapas evolutivas. Sirve como una herramienta esencial para que los entrenadores aprendan y cataloguen las diferentes criaturas que encuentran durante sus aventuras."
+            },
+            "2": {
+                "HEADLINE": "Pokedex",
+                "TECH_STACK": "JavaScript, HTML, CSS, API",
+                "DESCRIPTION": "Una colección completa de todos los Pokémon existentes, con descripciones detalladas de sus características, habilidades y atributos únicos, accesible a través de una API."
+            },
+            "3": {
+                "HEADLINE": "QuizApp",
+                "TECH_STACK": "JavaScript, HTML, CSS",
+                "DESCRIPTION": "Una función de cuestionario de opción múltiple pequeña y simple diseñada para mejorar el aprendizaje a través de preguntas y respuestas interactivas."
+            }
+        },
+        "LIVE_TEST": "Prueba en vivo",
+        "GITHUB": "Github"
+    },
+    "CONTACT": {
+        "HEADLINE": "Contacto",
+        "INTRODUCTION": "¿Tienes un problema que resolver?",
+        "DESCRIPTION_1": "Contáctame a través de este formulario, estoy interesado en escuchar tus ideas y contribuir a tus proyectos con mi trabajo.",
+        "DESCRIPTION_2": "¿Necesitas un desarrollador Frontend?",
+        "DESCRIPTION_3": "¡Contáctame!",
+        "NAME_PLACEHOLDER": "Nombre",
+        "EMAIL_PLACEHOLDER": "Email",
+        "MESSAGE_PLACEHOLDER": "Mensaje",
+        "SEND_BUTTON": "Enviar mensaje",
+        "NAME_ERROR": "Por favor ingresa un nombre",
+        "EMAIL_ERROR": "Por favor ingresa un email válido",
+        "MESSAGE_ERROR": "Por favor ingresa un mensaje",
+        "PRIVACY_POLICY_TEXT1": "He leído la ",
+        "PRIVACY_POLICY_TEXT2": "política de privacidad",
+        "PRIVACY_POLICY_TEXT3": " y acepto el procesamiento de mis datos como se describe.",
+        "PRIVACY_POLICY_ERROR": "Debes aceptar la política de privacidad",
+        "SUCCESS_MESSAGE": "Tu mensaje ha sido enviado exitosamente"
+    },
+    "PRIVACY_POLICY": {
+        "HEADLINE": "Política de Privacidad",
+        "INTRO": "Con esta política de privacidad, nos gustaría informarle sobre qué tipos de sus datos personales (en adelante también denominados \"datos\") procesamos, para qué fines y en qué medida. La política de privacidad se aplica a todo el procesamiento de datos personales que realizamos, tanto en el contexto de la prestación de nuestros servicios como en particular en nuestros sitios web, aplicaciones móviles y presencias en línea externas, como nuestros perfiles de redes sociales.",
+        "RESPONSIBLE": {
+            "TITLE": "Responsable",
+            "DESCRIPTION": "Milan Moreno\nUntere Waldstr. 4\n79194 Gundelfingen\n\nCorreo electrónico: milan.moreno.crea@gmail.com"
+        },
+        "DATA_COLLECTION": {
+            "TITLE": "Resumen de Procesamiento",
+            "VISIT": {
+                "TITLE": "Tipos de Datos Procesados",
+                "DESCRIPTION": "Al utilizar nuestros servicios en línea, procesamos los siguientes datos:",
+                "ITEMS": {
+                    "0": "Datos de inventario (p.ej., nombres, direcciones)",
+                    "1": "Datos de contacto (p.ej., correo electrónico, números de teléfono)",
+                    "2": "Datos de contenido (p.ej., entradas de texto, fotografías, videos)",
+                    "3": "Datos de uso (p.ej., sitios web visitados, interés en contenido)",
+                    "4": "Datos de meta/comunicación (p.ej., información del dispositivo, direcciones IP)"
+                },
+                "PURPOSE": "Los datos se procesan para los siguientes propósitos:",
+                "PURPOSE_ITEMS": {
+                    "0": "Provisión de servicios en línea y facilidad de uso",
+                    "1": "Medidas de seguridad",
+                    "2": "Medición de alcance",
+                    "3": "Tareas administrativas"
+                },
+                "LEGAL_BASIS": "El procesamiento se basa en el Art. 6(1)(f) RGPD (intereses legítimos)."
+            },
+            "CONTACT_FORM": {
+                "TITLE": "Formulario de Contacto",
+                "DESCRIPTION": "Cuando nos envía consultas a través del formulario de contacto, almacenaremos su información del formulario de consulta, incluidos los datos de contacto que proporcionó allí, para procesar la consulta y en caso de preguntas de seguimiento.",
+                "LEGAL_BASIS": "El procesamiento se basa en el Art. 6(1)(b) RGPD (ejecución del contrato o medidas precontractuales).",
+                "DATA_DELETION": "Los datos se eliminarán tan pronto como ya no sean necesarios para lograr el propósito de su recopilación. Esto suele ser el caso cuando la respectiva conversación con el usuario ha terminado."
+            }
+        },
+        "DATA_TRANSFER": {
+            "TITLE": "Transferencia de Datos",
+            "DESCRIPTION": "Sus datos personales no se transferirán a terceros para fines distintos a los enumerados a continuación:",
+            "ITEMS": {
+                "0": "Cumplimiento de obligaciones legales",
+                "1": "Prevención de amenaz",
+                "2": "Fines de prosecución legal",
+                "3": "Alojamiento y envío de correos electrónicos"
+            }
+        },
+        "RIGHTS": {
+            "TITLE": "Sus Derechos",
+            "DESCRIPTION": "Tiene los siguientes derechos con respecto a sus datos personales:",
+            "ITEMS": {
+                "0": "Derecho a la información",
+                "1": "Derecho a la rectificación o eliminación",
+                "2": "Derecho a la restricción del procesamiento",
+                "3": "Derecho a oponerse al procesamiento",
+                "4": "Derecho a la portabilidad de datos",
+                "5": "Derecho a retirar el consentimiento",
+                "6": "Derecho a presentar una queja ante una autoridad supervisora"
+            }
+        },
+        "OBJECTION": {
+            "TITLE": "Derecho de Oposición",
+            "DESCRIPTION": "Si procesamos sus datos personales basándonos en intereses legítimos, tiene derecho a oponerse a este procesamiento.",
+            "CONTACT": "Si desea ejercer su derecho de oposición, es suficiente un correo electrónico a nosotros."
+        },
+        "SECURITY": {
+            "TITLE": "Seguridad de Datos",
+            "DESCRIPTION": "Tomamos medidas técnicas y organizativas apropiadas para garantizar un nivel de protección adecuado al riesgo, teniendo en cuenta el estado de la técnica, los costos de implementación y la naturaleza, alcance, contexto y fines del procesamiento, así como el riesgo de probabilidad y gravedad variables para los derechos y libertades de las personas físicas.",
+            "TECH_MEASURES": "Las medidas incluyen, en particular, garantizar la confidencialidad, integridad y disponibilidad de los datos mediante el control del acceso físico a los datos, así como su acceso, entrada, divulgación, disponibilidad y separación."
+        },
+        "CHANGES": {
+            "TITLE": "Cambios en la Política de Privacidad",
+            "DESCRIPTION": "Nos reservamos el derecho de modificar esta política de privacidad para garantizar que siempre cumpla con los requisitos legales actuales o para implementar cambios en nuestros servicios en la política de privacidad, por ejemplo, al introducir nuevos servicios. Su próxima visita estará sujeta a la nueva política de privacidad."
+        }
+    },
+    "IMPRINT": {
+        "HEADLINE": "Aviso Legal",
+        "CONTACT": "Contacto",
+        "TELEPHONE": "Teléfono",
+        "EMAIL": "Email"
+    },
+    "FOOTER": {
+        "IMPRINT": "Aviso Legal",
+        "EMAIL_COPIED": "¡Email copiado!"
+    }
+}

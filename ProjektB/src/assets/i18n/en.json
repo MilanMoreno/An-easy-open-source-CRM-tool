@@ -1,0 +1,157 @@
+{
+    "HEADER": {
+        "ABOUT_ME": "About me",
+        "SKILLS": "Skills",
+        "PORTFOLIO": "Portfolio"
+    },
+    "HERO": {
+        "JOBTITLE": "Frontend Developer",
+        "LETSTALK": "Let's talk!",
+        "IAM": "I am",
+        "NAME": "Milan Moreno",
+        "SCROLLDOWN": "Scroll down →",
+        "EMAIL_COPIED": "Email copied!"
+    },
+    "ABOUT": {
+        "HEADLINE": "About me",
+        "INTRO": "Hi, I'm Milan Moreno, a Frontend Developer based in Freiburg, Germany. With a strong focus on creating exceptional user experiences, I specialize in building modern web applications using cutting-edge technologies and best practices in software development.",
+        "TEXT1": "As a dedicated developer, I excel in crafting clean, maintainable code and implementing responsive designs that work flawlessly across all devices. My expertise in Angular and TypeScript enables me to build scalable, enterprise-level applications that meet the highest standards of performance and reliability.",
+        "TEXT2": "I thrive in collaborative environments and have a proven track record of delivering complex projects on time. My commitment to continuous learning keeps me at the forefront of web development trends, ensuring I can provide innovative solutions to modern technical challenges."
+    },
+    "SKILLS": {
+        "GET_IN_TOUCH": "Get in touch",
+        "MY_SKILLS": "My skills",
+        "DESCRIPTION": "I specialize in creating dynamic web applications using modern technologies. My expertise spans across frontend development, with a strong foundation in responsive design and interactive user interfaces."
+    },
+    "PORTFOLIO": {
+        "HEADLINE": "Portfolio",
+        "INTRODUCTION": "Welcome to my project showcase - Each project represents a unique challenge tackled with creativity and technical expertise. Feel free to explore and interact with them.",
+        "PROJECTS": {
+            "0": {
+                "HEADLINE": "Join",
+                "TECH_STACK": "Angular, Typescript, HTML, CSS, Firebase",
+                "DESCRIPTION": "A sophisticated task management platform inspired by Kanban methodology. Features include drag-and-drop task organization, real-time collaboration, and intuitive user assignment systems."
+            },
+            "1": {
+                "HEADLINE": "El Pollo Loco",
+                "TECH_STACK": "JavaScript, HTML, CSS",
+                "DESCRIPTION": "This is a simple adventure game built with HTML, CSS, and JavaScript. The game features a character navigating through a level, collecting bottles and coins while battling enemies."
+            },
+            "2": {
+                "HEADLINE": "Pokedex",
+                "TECH_STACK": "JavaScript, HTML, CSS, API",
+                "DESCRIPTION": "A comprehensive collection of all existing Pokémon, complete with detailed descriptions of their characteristics, abilities, and unique attributes, accessible via an API."
+            },
+            "3": {
+                "HEADLINE": "QuizApp",
+                "TECH_STACK": "JavaScript, HTML, CSS",
+                "DESCRIPTION": "An interactive learning platform featuring a dynamic quiz system. Built with modern web technologies, it offers an engaging way to test and enhance knowledge through customizable multiple-choice questions and instant feedback."
+            }
+        },
+        "LIVE_TEST": "Live Test",
+        "GITHUB": "Github"
+    },
+    "CONTACT": {
+        "HEADLINE": "Contact",
+        "INTRODUCTION": "Let's Collaborate",
+        "DESCRIPTION_1": "Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.",
+        "DESCRIPTION_2": "Need a Frontend developer?",
+        "DESCRIPTION_3": "Contact me!",
+        "NAME_PLACEHOLDER": "Name",
+        "EMAIL_PLACEHOLDER": "Email",
+        "MESSAGE_PLACEHOLDER": "Message",
+        "SEND_BUTTON": "Send message",
+        "NAME_ERROR": "Please enter a name",
+        "NAME_PATTERN_ERROR": "Please enter only letters",
+        "EMAIL_ERROR": "Please enter a valid email",
+        "MESSAGE_ERROR": "Please enter a message",
+        "PRIVACY_POLICY_TEXT1": "I have read the ",
+        "PRIVACY_POLICY_TEXT2": "privacy policy",
+        "PRIVACY_POLICY_TEXT3": " and agree to the processing of my data as outlined.",
+        "PRIVACY_POLICY_ERROR": "You must agree to the privacy policy",
+        "SUCCESS_MESSAGE": "Your message has been sent successfully"
+    },
+    "PRIVACY_POLICY": {
+        "HEADLINE": "Privacy Policy",
+        "INTRO": "With this privacy policy, we would like to inform you about what types of your personal data (hereinafter also referred to as \"data\") we process, for what purposes and to what extent. The privacy policy applies to all processing of personal data carried out by us, both in the context of providing our services and in particular on our websites, in mobile applications and within external online presences, such as our social media profiles.",
+        "RESPONSIBLE": {
+            "TITLE": "Controller",
+            "DESCRIPTION": "Milan Moreno\nUntere Waldstr. 4\n79194 Gundelfingen\n\nEmail address: milan.moreno.crea@gmail.com"
+        },
+        "DATA_COLLECTION": {
+            "TITLE": "Overview of Processing Operations",
+            "VISIT": {
+                "TITLE": "Types of Data Processed",
+                "DESCRIPTION": "When using our online services, we process the following data:",
+                "ITEMS": {
+                    "0": "Inventory data (e.g., names, addresses)",
+                    "1": "Contact data (e.g., email, phone numbers)",
+                    "2": "Content data (e.g., text entries, photographs, videos)",
+                    "3": "Usage data (e.g., websites visited, interest in content)",
+                    "4": "Meta/communication data (e.g., device information, IP addresses)"
+                },
+                "PURPOSE": "The data is processed for the following purposes:",
+                "PURPOSE_ITEMS": {
+                    "0": "Provision of online services and user-friendliness",
+                    "1": "Security measures",
+                    "2": "Reach measurement",
+                    "3": "Administrative tasks"
+                },
+                "LEGAL_BASIS": "Processing is based on Art. 6(1)(f) GDPR (legitimate interests)."
+            },
+            "CONTACT_FORM": {
+                "TITLE": "Contact Form",
+                "DESCRIPTION": "When you send us inquiries via the contact form, your information from the inquiry form, including the contact details you provided there, will be stored by us for processing the inquiry and in case of follow-up questions.",
+                "LEGAL_BASIS": "Processing is based on Art. 6(1)(b) GDPR (contract performance or pre-contractual measures).",
+                "DATA_DELETION": "The data will be deleted as soon as they are no longer required for achieving the purpose of their collection. This is usually the case when the respective conversation with the user has ended."
+            }
+        },
+        "DATA_TRANSFER": {
+            "TITLE": "Data Transfer",
+            "DESCRIPTION": "Your personal data will not be transferred to third parties for purposes other than those listed below:",
+            "ITEMS": {
+                "0": "Fulfillment of legal obligations",
+                "1": "Prevention of threats",
+                "2": "Legal prosecution purposes",
+                "3": "Hosting and email dispatch"
+            }
+        },
+        "RIGHTS": {
+            "TITLE": "Your Rights",
+            "DESCRIPTION": "You have the following rights with respect to your personal data:",
+            "ITEMS": {
+                "0": "Right to information",
+                "1": "Right to rectification or deletion",
+                "2": "Right to restriction of processing",
+                "3": "Right to object to processing",
+                "4": "Right to data portability",
+                "5": "Right to withdraw consent",
+                "6": "Right to lodge a complaint with a supervisory authority"
+            }
+        },
+        "OBJECTION": {
+            "TITLE": "Right to Object",
+            "DESCRIPTION": "If we process your personal data based on legitimate interests, you have the right to object to this processing.",
+            "CONTACT": "If you wish to exercise your right to object, an email to us is sufficient."
+        },
+        "SECURITY": {
+            "TITLE": "Data Security",
+            "DESCRIPTION": "We take appropriate technical and organizational measures to ensure a level of protection appropriate to the risk, taking into account the state of the art, the costs of implementation and the nature, scope, context and purposes of processing as well as the risk of varying likelihood and severity for the rights and freedoms of natural persons.",
+            "TECH_MEASURES": "Measures include, in particular, ensuring the confidentiality, integrity and availability of data by controlling physical access to the data, as well as their access, input, disclosure, availability and separation."
+        },
+        "CHANGES": {
+            "TITLE": "Changes to the Privacy Policy",
+            "DESCRIPTION": "We reserve the right to modify this privacy policy to ensure it always complies with current legal requirements or to implement changes to our services in the privacy policy, e.g., when introducing new services. Your next visit will be subject to the new privacy policy."
+        }
+    },
+    "IMPRINT": {
+        "HEADLINE": "Imprint",
+        "CONTACT": "Contact",
+        "TELEPHONE": "Telephone",
+        "EMAIL": "Email"
+    },
+    "FOOTER": {
+        "IMPRINT": "Imprint",
+        "EMAIL_COPIED": "Email copied!"
+    }
+}

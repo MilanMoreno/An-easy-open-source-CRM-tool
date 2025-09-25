@@ -1,0 +1,209 @@
+@import './../../../../../styles.scss';
+@import './../../../mixins/mixin.scss';
+
+.flex-wrapper {
+    position: relative;
+    @include dflex();
+    width: 100%;
+    background-color: rgb(25, 35, 55);
+}
+
+.content-wrapper {
+    background-color: rgb(25, 35, 55);
+    @include dflex();
+    width: 100%;
+    max-width: 1920px;
+}
+
+.content-container {
+    @include dflex(row, space-between);
+    position: relative;
+    height: 100vh;
+    z-index: 4;
+    width: 100%;
+    margin-left: 15%;
+}
+
+.text-container {
+    width: 471px;
+    margin-right: 10%;
+    z-index: 90;
+}
+
+.personal-text-container {
+    @include dflex(row);
+    width: 471px;
+    font-size: 16px;
+    color: white;
+    z-index: 90;
+}
+
+.personal-start-text {
+    font-size: 16px;
+    color: white;
+    width: 471px;
+    z-index: 90;
+}
+
+.svg {
+    @include dflex(row, center, center);
+    width: 100px;
+}
+
+.personal-text {
+    position: relative;
+    width: 359px;
+    font-size: 16px;
+    z-index: 50;
+}
+
+.author-container {
+    @include dflex(row, center, center);
+    border-radius: 50%;
+    border: 5px solid $green;
+    overflow: hidden;
+    object-fit: cover;
+    min-width: 500px;
+    width: 500px;
+    height: 500px;
+    z-index: 30;
+
+    >img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.line-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.deco-line {
+    border-bottom: 4px solid $green;
+    width: 99999px;
+    height: 10px;
+    right: 0;
+    z-index: 30;
+    position: absolute;
+    left: 0;
+}
+
+.shadow {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    top: 30%;
+}
+
+@media (max-width: 1305px) {
+
+    .content-container {
+        margin-left: 5%;
+    }
+}
+
+
+@media (max-width: 1100px) {
+
+    .content-wrapper {
+        background-color: $darkblue;
+    }
+
+    .flex-wrapper {
+        background-color: $darkblue;
+    }
+}
+
+@media (max-width: 1150px) {
+
+    .author-container {
+        display: none;
+    }
+
+    .deco-line {
+        display: none;
+    }
+
+    .content-wrapper {
+        width: auto;
+    }
+
+    .content-container {
+        margin-left: 0;
+        @include dflex(row, center, center);
+        width: 100%;
+    }
+
+    .text-container {
+        margin-right: 20px;
+        margin-left: 20px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+
+    .text-container {
+        // max-width: 80vw;
+    }
+
+    .headline {
+        font-size: 45px;
+    }
+
+    .personal-start-text {
+        // width: auto;
+        max-width: 80vw;
+        text-wrap: wrap;
+    }
+
+    .personal-text-container {
+        // width: auto;
+        max-width: 80vw;
+
+        @include dflex(row, flex-start, flex-start);
+    }
+
+    .personal-text {
+        width: auto;
+        text-wrap: wrap;
+    }
+
+    .svg {
+        margin-top: 20px;
+        margin-right: 10px;
+    }
+
+    .content-container {
+        height: auto;
+        padding-top: 100px;
+        padding-bottom: 0px;
+    }
+
+}
+
+@media (max-width: 400px) {}
+
+/* About-Sektion: Text zentrieren und Schriftgröße anpassen (Point 4) */
+.text-container {
+  text-align: center; /* Zentrieren des Textes */
+
+  p, .personal-start-text, .personal-text { /* Apply to p tags and existing text classes */
+    font-size: 0.9rem; /* Kleinere Schriftgröße */
+    max-width: 100%; /* Maximale Breite begrenzen */
+    margin-left: auto; /* Zentrieren block elements */
+    margin-right: auto; /* Zentrieren block elements */
+    overflow-wrap: break-word; /* Lange Wörter umbrechen */
+    word-wrap: break-word; /* Older browsers fallback */
+  }
+}
+
+/* Für sehr kleine Bildschirme noch kleinere Schrift */
+@media (max-width: 320px) {
+  .text-container {
+     p, .personal-start-text, .personal-text {
+       font-size: 0.8rem;
+     }
+  }
+}
