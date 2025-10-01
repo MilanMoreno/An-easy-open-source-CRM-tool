@@ -393,7 +393,7 @@ import { fadeInLeft, fadeInUp } from '../../../../shared/animations/fade.animati
 
       .about__intro,
       .about__text-block {
-        font-size: 14px; 
+        font-size: 16px; 
       }
 
       .about__image-wrapper {

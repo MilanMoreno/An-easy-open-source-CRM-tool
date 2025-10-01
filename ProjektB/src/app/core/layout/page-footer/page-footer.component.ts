@@ -19,7 +19,7 @@ import { Router } from '@angular/router';
             class="footer__logo"
             (click)="navigateHome()">
           <a (click)="navigateToImprint()" class="footer__imprint">
-            Imprint
+            {{ "FOOTER.IMPRINT" | translate }}
           </a>
         </div>
 

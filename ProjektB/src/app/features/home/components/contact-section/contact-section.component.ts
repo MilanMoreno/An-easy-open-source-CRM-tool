@@ -378,7 +378,7 @@ interface ContactFormData {
     .contact__error {
       display: block;
       color: red;
-      font-size: 14px;
+      font-size: 16px;
       position: absolute;
       left: 0;
     }
@@ -396,7 +396,7 @@ interface ContactFormData {
       border-radius: 10px;
       padding: 10px 20px;
       color: var(--color-text-primary);
-      font-size: 14px;
+      font-size: 16px;
       cursor: pointer;
       transition: all 0.3s ease;
 
@@ -509,7 +509,7 @@ interface ContactFormData {
 
     @media (max-width: 480px) {
       .contact__checkbox-text {
-        font-size: 15px;
+        font-size: 16px;
       }
 
       .contact__submit {
@@ -605,7 +605,7 @@ interface ContactFormData {
       }
       
       .contact__checkbox-text {
-        font-size: 13px;
+        font-size: 16px;
       }
       
       input, textarea {

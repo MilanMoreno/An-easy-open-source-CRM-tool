@@ -308,7 +308,7 @@ import { CommonModule } from '@angular/common';
     }
 
     .contact__checkbox-text {
-      font-size: 15px;
+      font-size: 16px;
 
       a {
         color: var(--color-accent-secondary);
