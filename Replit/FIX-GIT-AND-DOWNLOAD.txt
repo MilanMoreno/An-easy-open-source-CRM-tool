@@ -1,0 +1,97 @@
+═══════════════════════════════════════════════════════════════
+ HOW TO DOWNLOAD YOUR PROJECT (WORKS 100%)
+═══════════════════════════════════════════════════════════════
+
+PROBLEM: The tar.gz file opens as text instead of downloading.
+
+SOLUTION: Use this special download page I created.
+
+STEP 1: Open your web browser
+
+STEP 2: Copy and paste this URL:
+
+https://e8a7b6fd-f965-4bfa-944e-c56ec8e530ed-00-3pxxbuai1vgks.janeway.replit.dev/GET-PROJECT.html
+
+STEP 3: Click the big purple "Download Project" button
+
+STEP 4: The file downloads properly (6 MB)
+
+STEP 5: Extract the file:
+   - Windows: Right-click → 7-Zip → Extract Here
+   - Mac: Double-click the file
+   - Linux: Right-click → Extract Here
+
+DONE! You have your complete project.
+
+═══════════════════════════════════════════════════════════════
+ HOW TO FIX GIT AND PUSH TO GITHUB
+═══════════════════════════════════════════════════════════════
+
+PROBLEM: "PUSH_REJECTED - The remote has commits that aren't in 
+          the local repository"
+
+SOLUTION: You need to sync (pull) first, then push.
+
+IN REPLIT:
+
+1. Click the "Shell" tab at the BOTTOM of your screen
+   (Not Console, not Git tab - the Shell tab!)
+
+2. Type these commands ONE BY ONE and press ENTER after each:
+
+   git pull origin main --rebase
+   
+   (This syncs your local code with GitHub)
+
+3. If you see conflicts, type:
+
+   git rebase --abort
+   git pull origin main --allow-unrelated-histories
+
+4. Now push:
+
+   git push origin main
+
+5. If it asks for username/password:
+   - Username: MilanMoreno
+   - Password: Use a GitHub Personal Access Token (not your password)
+   
+   Get token here: https://github.com/settings/tokens
+   Click "Generate new token (classic)"
+   Check "repo" permission
+   Copy the token and use it as password
+
+═══════════════════════════════════════════════════════════════
+ ALTERNATIVE: DOWNLOAD INDIVIDUAL FILES
+═══════════════════════════════════════════════════════════════
+
+If the download still doesn't work, download individual files:
+
+Open these URLs in your browser (right-click → Save As):
+
+https://e8a7b6fd-f965-4bfa-944e-c56ec8e530ed-00-3pxxbuai1vgks.janeway.replit.dev/index.html
+https://e8a7b6fd-f965-4bfa-944e-c56ec8e530ed-00-3pxxbuai1vgks.janeway.replit.dev/board.html
+https://e8a7b6fd-f965-4bfa-944e-c56ec8e530ed-00-3pxxbuai1vgks.janeway.replit.dev/api-server.js
+https://e8a7b6fd-f965-4bfa-944e-c56ec8e530ed-00-3pxxbuai1vgks.janeway.replit.dev/schema.sql
+
+(Create a folder and save each file)
+
+═══════════════════════════════════════════════════════════════
+ WHY DOES TAR.GZ OPEN AS TEXT?
+═══════════════════════════════════════════════════════════════
+
+Some browsers (especially on Windows) try to display binary files
+as text if the web server doesn't send the correct headers.
+
+That's why I created GET-PROJECT.html - it forces the download
+with the correct file type.
+
+═══════════════════════════════════════════════════════════════
+
+GO TO: https://e8a7b6fd-f965-4bfa-944e-c56ec8e530ed-00-3pxxbuai1vgks.janeway.replit.dev/GET-PROJECT.html
+
+CLICK THE BUTTON
+
+YOUR PROJECT DOWNLOADS
+
+═══════════════════════════════════════════════════════════════
